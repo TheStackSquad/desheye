@@ -1,0 +1,76 @@
+.project-layout {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f9fafb;
+    font-family: var(--Josefin);
+  }
+  
+  .project-container {
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    max-width: 72rem;
+  }
+  
+  .project-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .header-title {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1a202c;
+  }
+  
+  .header-description {
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #4a5568;
+    max-width: 32rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .project-card-container {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .project-card-container:hover {
+    transform: translateY(-0.25rem);
+  }
+  
+  .project-contact {
+    margin-top: 4rem;
+    text-align: center;
+  }
+  
+  .contact-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a202c;
+  }
+  
+  .contact-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #000;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .contact-button:hover {
+    background-color: #1a202c;
+  }
+  

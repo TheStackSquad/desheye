@@ -1,0 +1,115 @@
+/*Right Column*/
+.right-column{
+  width: 100%;
+  }
+
+  
+    .content-card{
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      width:100%;
+      padding: 0px .7rem;
+      overflow: hidden;
+    }
+    .header-section{
+      width:100%;
+      height: fit-content;
+      padding: .5rem;
+      display: flex;
+      flex-direction: column;
+    }
+       
+    .freelance-button{
+      width: 95%;
+      height: 50px;
+      padding: .5rem;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      padding: .3rem;
+      margin-bottom: 1rem;
+      border: none;
+      outline: none;
+    }
+    
+    span{
+      height: 100%;
+      width: fit-content;
+      font-size: 1.2rem;
+      background-color: #4b5563;
+      color: whitesmoke;
+      padding: 0px .3rem;
+      display: flex;
+      align-items: center;
+    }
+   
+    .download-icon{
+      width: 40px;
+      height: 100%;
+      color: black;
+      padding: 0px .3rem;
+      background-color: antiquewhite;
+    }
+    .title-container{
+      background-color: whitesmoke;
+      overflow: hidden;
+      margin: 1.2rem 0px;
+      width: 95%;
+    }
+    .subtitle{
+      font-size: 1.3rem;
+    }
+    .main-title{
+      font-size: 2rem;
+    }
+    .section-title{
+      font-size: 1.5rem;
+    }
+    .description {
+      font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+      line-height: 1.5;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #333;
+      margin: 1rem auto;
+      min-height: 4rem;
+      width: 90%;
+      height: auto;
+      overflow: hidden;
+    }
+    
+ 
+
+  
+
+      /* Media query for md (medium-sized screens) */
+      @media (min-width: 577px){
+        .description {
+          padding: 0.8rem;
+          font-size: clamp(1rem, 2vw + 0.8rem, 1.4rem); /* Adjust font size */
+        }
+      }
+        /* Media query for lg (larger screens) */
+    @media (min-width: 993px) {
+      .description {
+        padding: 1.5rem;
+        font-size: clamp(1rem, 2vw + 1rem, 1.5rem); /* Default larger font size */
+        min-height: 5rem;
+      }
+    }
+    
+    .skills-grid{
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem; /* Space between grid items */
+    }
+  
+    @media (min-width: 576px){
+      .skills-grid{
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+  
