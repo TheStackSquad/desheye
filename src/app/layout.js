@@ -23,12 +23,11 @@ export default function RootLayout({ children }) {
       <body>
         <Header navItems={[
           { name: 'About', path: '/' },
-          { name: 'Skills', path: '/Skills' },
+          { name: 'Portfolio', path: '/Portfolio' },
           { name: 'Services', path: '/Services' },
           { name: 'Team', path: '/Team' },
           { name: 'Education', path: '/Education' },
-          { name: 'Portfolio', path: '/portfolio' },
-          { name: 'Contact', path: '/contact' },
+          { name: 'Contact', path: '/' },
         ]} />
          <Suspense fallback={<div>Loading...</div>}>
         <AnimatePresence mode="sync" initial={false}>
