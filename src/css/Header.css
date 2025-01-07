@@ -57,7 +57,7 @@
   left: 0;
   right: 0;
   background-color: whitesmoke;
-  padding: .1rem;
+  padding: .1rem 0px .5rem 0px;
   width: 100%;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   gap: 0.5rem;
@@ -65,10 +65,10 @@
 
   .mobile-nav-link {
     color: #4B5563;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.3rem;
     position: relative;
     overflow-x: hidden; /* Ensure the animated background doesn't spill out */
     transition: color 0.2s ease;
@@ -78,7 +78,7 @@
   @media (min-width: 576px){
     .mobile-nav-link {
       display: flex;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
   }
   .mobile-nav-link::before {
