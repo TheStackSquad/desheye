@@ -1,6 +1,7 @@
 .project-layout {
     min-height: 100vh;
     width: 100%;
+    padding: .5rem;
     background-color: #f9fafb;
     font-family: var(--Josefin);
   }
@@ -8,7 +9,11 @@
   .project-container {
     padding: 4rem .5rem;
     margin: 0 auto;
-    max-width: 72rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .project-header {
@@ -35,6 +40,7 @@
   .projects-grid {
     display: grid;
     gap: 1.5rem;
+    width: 95%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   
