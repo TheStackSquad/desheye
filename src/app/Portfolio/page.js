@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import ProjectsLayout from '../components/ProjectsLayout';
 import { slideInPage } from '../motionUtils/animation';
 
-export default function Skills() {
+export default function Portfolio() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
