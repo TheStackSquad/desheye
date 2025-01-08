@@ -14,6 +14,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      background-color: rgb(215, 225, 228, .5);
     }
     .header-section{
       width:100%;

@@ -68,8 +68,8 @@
   }
   
   .project-card-link.demo-link {
-    background-color: wheat;
-    color: black;
+    background-color: #09598f;
+    color: rgb(230, 226, 221);
     font-weight: 700;
     text-decoration: none;
   }
