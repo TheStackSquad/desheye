@@ -8,8 +8,6 @@ import { FaCode,
   FaMobileAlt,
   FaTasks,
   FaTools } from 'react-icons/fa';
-console.log(FaGlobe); 
-console.log(FaMobileAlt, FaCode, FaDatabase); 
 import '../../css/servicesPage.css'; // Importing the CSS file
 
 const ServiceCard = ({ icon: Icon, title, description, features }) => {

@@ -4,7 +4,7 @@
   min-height: 100vh;
   width: 100%;
   font-family: var(--Josefin);
-  background: linear-gradient(to bottom right, #1a202c, #2d3748);
+  background: linear-gradient(to bottom right, #80a4eb, #030e22);
 }
 .services-container {
   width: 100%;
@@ -52,11 +52,11 @@
   position: relative;
   padding: 1.5rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
+  background: rgb(2, 19, 36);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 95%;
+  height: auto;
 }
 
 .service-card-header {
@@ -92,9 +92,6 @@
 
 .service-features {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  color: wheat;
   font-size: 1.1rem;
   opacity: 0;
   height: 0;
@@ -105,6 +102,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: wheat;
+  margin: .3rem 0px;
+  padding: .4rem 0px;
 }
 
 .feature-bullet {
