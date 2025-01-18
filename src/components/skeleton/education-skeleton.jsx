@@ -1,7 +1,6 @@
 // src/app/components/skeleton/education-skeleton.jsx
 import React from 'react';
-import { Skeleton } from './base-skeleton';
-import '../../../css/skeleton.css';
+import { Skeleton } from '@/components/skeleton/base-skeleton';
 
 export const EducationPageSkeleton = () => (
   <div className="education-page">
