@@ -1,18 +1,38 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, Linkedin, MessageCircle } from 'lucide-react';
-import Image from 'next/image';
+import React from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, Linkedin, MessageCircle, Twitter} from "lucide-react";
+import Image from "next/image";
 
 const LeftColumn = () => {
   const contactInfo = [
-    { icon: <Mail size={20} />, label: "Email", value: "thefelainme@gmail.com", link: "mailto:thefelainme@gmail.com" },
+    {
+      icon: <Mail size={20} />,
+      label: "Email",
+      value: "thefelainme@gmail.com",
+      link: "mailto:thefelainme@gmail.com",
+    },
     { icon: <Phone size={20} />, label: "Tel", value: "+234-815764221" },
-    { icon: <MessageCircle size={20} />, label: "WhatsApp", value: "+234 816 711 8379" },
-    { icon: <Linkedin size={20} />, label: "LinkedIn", value: "linkedin.com/in/adesheye", link: "https://linkedin.com/in/adesheye" },
+    {
+      icon: <MessageCircle size={20} />,
+      label: "WhatsApp",
+      value: "+234 816 711 8379",
+    },
+    {
+      icon: <Linkedin size={20} />,
+      label: "LinkedIn",
+      value: "linkedin.com/in/adesheye",
+      link: "https://linkedin.com/in/adesheye",
+    },
+    {
+      icon: <Twitter size={20} />,
+      label: "Twitter",
+      value: "concieveXcreate",
+      link: "https://x.com/ConceiveXCreate",
+    },
   ];
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
@@ -21,17 +41,19 @@ const LeftColumn = () => {
       <div className="space-y-6">
         <div className="text-center">
           <div className="w-32 h-32 mx-auto bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full mb-4 overflow-hidden">
-          <Image
-          src='/asset/img/desheyeHeader.webp'
-          className="rounded-full mx-auto object-cover w-56 h-36"
-  width={150}
-  height={150}
-  loading="lazy"
-          alt='desheye'
-          />
+            <Image
+              src="/asset/img/desheyeHeader.webp"
+              className="rounded-full mx-auto object-cover w-56 h-36"
+              width={150}
+              height={150}
+              loading="lazy"
+              alt="desheye"
+            />
           </div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-1">General Information</h2>
-          <div className="w-16 h-1 bg-purple-500 mx-auto rounded-full"/>
+          <h2 className="text-2xl font-bold text-gray-800 mb-1">
+            General Information
+          </h2>
+          <div className="w-16 h-1 bg-purple-500 mx-auto rounded-full" />
         </div>
 
         <div className="space-y-4">
@@ -49,7 +71,7 @@ const LeftColumn = () => {
               <div className="flex-1">
                 <div className="text-sm text-gray-500">{item.label}:</div>
                 {item.link ? (
-                  <a 
+                  <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
