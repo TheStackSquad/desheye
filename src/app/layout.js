@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
               { name: 'Contact', path: '/' },
             ]}
           />
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div className="loading-container">Loading...</div>}>
             <SafeHydration>
               <AnimatePresence mode="sync" initial={false}>
                 {children}

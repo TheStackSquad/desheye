@@ -83,3 +83,44 @@ body{
     opacity: 1;
   }
 }
+
+
+/* Center the loading animation in the viewport */
+.loading-container {
+  @apply flex items-center justify-center h-screen bg-gray-100;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Create a smooth fading animation for loading */
+.loading-container::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-gray-300 via-gray-200 to-gray-300 opacity-50;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Add a loading text animation */
+.loading-container span {
+  @apply text-xl font-semibold text-gray-800 relative z-10;
+  animation: pulseText 1.5s infinite;
+}
+
+/* Shimmer effect for background */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Pulse effect for the text */
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
