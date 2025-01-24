@@ -89,9 +89,9 @@ export default function TeamPage() {
         { skill: "Version Control", level: 75 }
       ],
       social: [
-        { platform: "github", url: "#" },
-        { platform: "linkedin", url: "#" },
-        { platform: "twitter", url: "#" }
+        { platform: "github", url: "https://github.com/petersudai" },
+        { platform: "linkedin", url: "https://www.linkedin.com/in/peter-sudai-3b467313b/" },
+        { platform: "twitter", url: "https://x.com/PeterSudai" }
       ]
     },
     {

@@ -17,8 +17,15 @@ export default function TeamPage() {
   }, []);
 
   return (
-    <div className=" bg-gradient-to-br from-gray-100 to-gray-50 py-16">
-      {loading ? <p>Loading...</p> : <TeamUI />}
+    <div className="bg-gradient-to-br from-gray-100 to-gray-50 min-h-screen flex items-center justify-center">
+      {loading ? (
+        <p className="text-xl font-semibold text-purple-600 animate-pulse">
+          Loading...
+        </p>
+      ) : (
+        <TeamUI />
+      )}
     </div>
   );
+  
 }
