@@ -4,35 +4,48 @@ import React from "react";
 import { uiData } from "@/data/dataUI";
 
 const ExperienceUI = () => (
-  <>
-    <div className="mb-8">
-      <h2 className="text-4xl font-bold text-white">
+  <div className="">
+    {/* Section Header */}
+    <div className="mb-12 px-5">
+      <h2 className="text-4xl md:text-5xl font-bold text-white py-5 mb-2">
         {uiData.experience.heading}
       </h2>
-      <p className="text-sm text-gray-400 mt-1">
+      <p className="text-base md:text-lg text-gray-400">
         A Frontend Developer and UI/UX Designer
       </p>
     </div>
-    <div className="space-y-4">
+
+    {/* Experience Cards Grid */}
+    <div className="grid grid-cols-1 px-5 gap-6 md:gap-8">
       {uiData.experience.history.map((item, index) => (
         <div
           key={index}
-          className="bg-[#181D30] p-6 rounded-2xl border border-gray-700"
+          className="bg-[#181D30] p-6 md:p-8 rounded-2xl border border-gray-700 shadow-lg transition-all duration-300 ease-in-out transform hover:scale-[1.01] hover:border-yellow-500"
         >
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            {/* Role & Company Group */}
             <div>
-              <h3 className="text-xl font-semibold text-white">{item.role}</h3>
-              <p className="text-sm text-gray-400">{item.company}</p>
+              <h3 className="text-xl md:text-2xl font-semibold text-white">
+                {item.role}
+              </h3>
+              <p className="text-sm md:text-base text-gray-400 mt-1">
+                {item.company}
+              </p>
             </div>
-            <div className="text-right mt-2 md:mt-0">
-              <p className="text-white text-sm">{item.type}</p>
-              <p className="text-gray-400 text-xs">{item.duration}</p>
+            {/* Type & Duration Group */}
+            <div className="md:text-right">
+              <p className="text-white text-base md:text-lg font-medium">
+                {item.type}
+              </p>
+              <p className="text-gray-400 text-xs md:text-sm mt-1">
+                {item.duration}
+              </p>
             </div>
           </div>
         </div>
       ))}
     </div>
-  </>
+  </div>
 );
 
 export default ExperienceUI;

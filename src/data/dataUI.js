@@ -13,8 +13,14 @@ export const uiData = {
   },
   about: {
     heading: "A Little About Me",
-    description:
-      "A Fullstack Developer and UI/UX Designer, I have been designing and building user interfaces for over a decade. I have a passion for creating beautiful and intuitive digital experiences. My work is a blend of creative design and technical development. I am always exploring new technologies and frameworks to improve my skills and stay updated with the latest trends. I am a detail-oriented person who loves to solve complex problems and create user-friendly solutions. I have worked on a variety of projects, from small business websites to large-scale enterprise applications. I love to collaborate with teams and build products that make a difference in people's lives.",
+    description: `A Fullstack Developer and UI/UX Designer, I have been designing and building user 
+      interfaces for over a decade.I have a passion for creating beautiful and intuitive 
+      digital experiences. My work is a blend of creative design and technical development.
+      I am always exploring new technologies and frameworks to improve my skills and stay 
+      updated with the latest trends. I am a detail - oriented person who loves to solve complex 
+      problems and create user - friendly solutions. I have worked on a variety of projects,
+  from small business websites to large - scale enterprise applications. 
+  I love to collaborate with teams and build products that make a difference in people's lives.`,
     skills: [
       { name: "Figma", icon: <Figma size={48} /> },
       {
@@ -54,11 +60,11 @@ export const uiData = {
         ),
       },
       {
-        name: "GSAP",
+        name: "MongoDB",
         icon: (
           <Image
-            src="https://www.vectorlogo.zone/logos/greensock/greensock-icon.svg"
-            alt="GSAP"
+            src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg"
+            alt="MongoDB"
             width={48}
             height={48}
             className="w-12 h-12"
@@ -137,26 +143,40 @@ export const uiData = {
     heading: "Featured Work",
     projects: [
       {
-        title: "ZeroScope",
-        tagline: "DESIGN. DEVELOP. CONQUER.",
+        title: "JollyBargain E-commerce",
+        tagline: "Scalable E-commerce with State Management Power",
         description:
-          "A Frontend Developer and UI/UX Designer, I have been designing and building user interfaces for over a decade. I have a passion for creating beautiful and intuitive digital experiences. My work is a blend of creative design and technical development.",
-        image:
-          "https://placehold.co/800x600/131728/FFFFFF?text=Project+ZeroScope",
+          "A feature-rich e-commerce platform built with **Next.js** and **Redux** for robust state management. The focus was on delivering a seamless shopping experience, demonstrating expertise in building scalable, component-based applications with advanced front-end logic.",
+        image: "/img/jollyBargain.png", // Assuming /img is the web-accessible path
+        liveLink: "https://jolly-bargain-9d66.vercel.app/",
+        githubLink: "https://github.com/TheStackSquad/jollyBargain",
       },
       {
-        title: "Project B",
-        tagline: "CREATE. INNOVATE. REPEAT.",
+        title: "Bandhit Ticketing Platform",
+        tagline: "Full-Stack Event Ticketing & Management",
         description:
-          "Another exciting project demonstrating my skills in web development and design. I focused on creating an intuitive user experience with modern technologies. The goal was to build a scalable and maintainable application.",
-        image: "https://placehold.co/800x600/131728/FFFFFF?text=Project+Beta",
+          "A comprehensive, full-stack event solution featuring a modern **Next.js** frontend and a dedicated **Express.js backend**. This project showcases proficiency in developing secure APIs, integrating front-end with backend services, and handling complex user authentication flows.",
+        image: "/img/bandhit.png",
+        liveLink: "https://bandhit.vercel.app/welcome",
+        githubLink: "https://github.com/TheStackSquad/bandhit",
       },
       {
-        title: "Project C",
-        tagline: "CODE. LAUNCH. SUCCEED.",
+        title: "OnFolio SaaS Template",
+        tagline: "Dynamic Template SaaS Application",
         description:
-          "A personal project to explore new a framework and design patterns. I built a dynamic website with interactive features and a responsive layout. The project was a great learning experience.",
-        image: "https://placehold.co/800x600/131728/FFFFFF?text=Project+Gamma",
+          "A highly functional template for a Software as a Service (SaaS) application developed entirely with **Next.js**. It demonstrates rapid development capability, routing architecture, and building reusable UI components necessary for modern subscription-based products.",
+        image: "/img/onFolio.png",
+        liveLink: "https://onfolio.vercel.app/explore",
+        githubLink: "https://github.com/TheStackSquad/onfolio",
+      },
+      {
+        title: "Ikeja Government Portal",
+        tagline: "Modernizing Public Sector Web Presence",
+        description:
+          "A professional government information website developed using **Next.js**. This project emphasizes design accessibility, performance optimization, and responsive design, ensuring a fast and intuitive experience for citizens accessing public sector information.",
+        image: "/img/ikeja.png",
+        liveLink: "https://ikeja.vercel.app/",
+        githubLink: "https://github.com/TheStackSquad/ikeja",
       },
     ],
   },

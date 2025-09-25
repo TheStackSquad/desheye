@@ -19,7 +19,7 @@ const FeaturedWork = () => {
 
   return (
     <>
-      <div className="mb-8">
+      <div className="mb-2">
         <h2 className="text-4xl font-bold text-white">
           {uiData.featuredWork.heading}
         </h2>
