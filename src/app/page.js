@@ -20,21 +20,6 @@ import {
   FileText,
 } from "lucide-react";
 import Homepage from "@/components/home/homePage";
-import SectionWrapper from "@/animation/homeAnimate";
-
-const Contact = () => (
-  <SectionWrapper sectionId="contact">
-    <div className="bg-[#181D30] p-12 md:p-24 rounded-3xl text-center border border-gray-700">
-      <h2 className="text-4xl font-bold text-white mb-4">
-        Got An Idea? Let’s Bring It To Life!
-      </h2>
-      <p className="text-gray-400 text-lg mb-8">
-        A Frontend Developer and UI/UX Designer, I have been designing and
-        building user interfaces.
-      </p>
-    </div>
-  </SectionWrapper>
-);
 
 const Footer = () => (
   <footer className="py-8 text-center text-gray-400">

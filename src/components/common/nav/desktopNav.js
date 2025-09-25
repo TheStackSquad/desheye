@@ -11,13 +11,14 @@ export default function DesktopNav({ navItems }) {
         <Link
           href={item.href}
           className="relative group px-4 py-2 rounded-lg
-          transition-all duration-300 hover:bg-gray-100"
+          transition-all duration-300 hover:bg-gray-100 hover:text-black"
         >
           <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
             {item.label}
           </span>
           <motion.div
-            className="absolute inset-0 bg-primary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute inset-0 bg-primary/10 rounded-lg opacity-0
+            group-hover:opacity-100 transition-opacity duration-300"
             layoutId="desktopHover"
           />
         </Link>
