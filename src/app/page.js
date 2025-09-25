@@ -1,4 +1,5 @@
 // src/app/page.js
+// src/app/page.js
 "use client";
 
 import React from "react";
@@ -23,7 +24,9 @@ import Homepage from "@/components/home/homePage";
 
 const Footer = () => (
   <footer className="py-8 text-center text-gray-400">
-    <div className="flex justify-center space-x-6">
+    {/* FIX: Add 'flex-wrap' to allow items to wrap to the next line on smaller screens. */}
+    {/* Also, change 'space-x-6' to a combination of 'gap-4' and 'justify-center' for better wrapping control. */}
+    <div className="flex flex-wrap justify-center gap-4 px-4">
       <a href="#" className="hover:text-white transition-colors">
         <Twitter size={24} />
       </a>
@@ -75,7 +78,7 @@ const Footer = () => (
 
 const Page = () => {
   return (
-    <div className="bg-[#131728] text-white font-sans">
+    <div className="bg-[#131728] text-white font-sans min-h-screen overflow-x-hidden">
       <Homepage />
       <Footer />
     </div>

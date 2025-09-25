@@ -33,7 +33,8 @@ const HeroSection = ({ data }) => {
           - flex, flex-col, justify-center, items-center on ALL sizes to center content vertically/horizontally.
           - On mobile (default), all content will flow in a single, centered column.
       */}
-      <header className="relative z-10 w-full min-h-screen flex flex-col justify-center items-center text-center px-4 py-8 md:py-0">
+      <header className="relative z-10 w-full min-h-screen flex flex-col
+      justify-center items-center text-center px-4 py-8 md:py-0">
         <div className="max-w-6xl w-full mx-auto flex flex-col items-center">
           {/* Hero Content Container (Text and Buttons) */}
           <div className="space-y-6 md:space-y-8 lg:space-y-12 w-full">

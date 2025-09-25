@@ -123,14 +123,19 @@ export default function MobileMenu({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full relative group bg-gradient-to-r from-blue-500 to-purple-600 
-              text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl 
-              transition-all duration-300 flex items-center justify-center space-x-3"
+  text-white font-semibold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl 
+  transition-all duration-300 flex items-center justify-center space-x-3"
             >
-              <Download size={20} className="group-hover:animate-bounce" />
-              <span>Download Resume</span>
+              {/* Wrap icon and text in a div to apply z-index, ensuring they are above the overlay */}
+              <div className="flex items-center space-x-3 relative z-10">
+                <Download size={20} className="group-hover:animate-bounce" />
+                <span>Download Resume</span>
+              </div>
+
+              {/* This is the overlay, which should have a lower z-index (or none, as z-10 on text/icon is enough) */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 
-                rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 layoutId="downloadButtonHover"
               />
             </motion.button>
