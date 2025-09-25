@@ -11,7 +11,7 @@ const Homepage = () => {
     <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <HeroSection data={uiData.header} />
 
-      <style jsx>{`
+      {/* <style jsx>{`
         @keyframes spin-slow {
           from {
             transform: rotate(0deg);
@@ -23,7 +23,7 @@ const Homepage = () => {
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };

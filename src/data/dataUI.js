@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image"; // Import the Image component
-import { Figma } from "lucide-react";
+import { Figma, Music, Zap } from "lucide-react";
 
 export const uiData = {
   header: {
@@ -14,13 +14,15 @@ export const uiData = {
   about: {
     heading: "A Little About Me",
     description: `A Fullstack Developer and UI/UX Designer, I have been designing and building user 
-      interfaces for over a decade.I have a passion for creating beautiful and intuitive 
+      interfaces for over a decade. I have a passion for creating beautiful and intuitive 
       digital experiences. My work is a blend of creative design and technical development.
       I am always exploring new technologies and frameworks to improve my skills and stay 
-      updated with the latest trends. I am a detail - oriented person who loves to solve complex 
-      problems and create user - friendly solutions. I have worked on a variety of projects,
-  from small business websites to large - scale enterprise applications. 
-  I love to collaborate with teams and build products that make a difference in people's lives.`,
+      updated with the latest trends. I am a detail-oriented person who loves to solve complex 
+      problems and create user-friendly solutions. I have worked on a variety of projects,
+      from small business websites to large-scale enterprise applications. 
+      I love to collaborate with teams and build products that make a difference in people's lives.`,
+
+    // --- UPDATED SKILLS SECTION ---
     skills: [
       { name: "Figma", icon: <Figma size={48} /> },
       {
@@ -29,9 +31,9 @@ export const uiData = {
           <Image
             src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
             alt="JS"
-            width={48} // Add explicit width
-            height={48} // Add explicit height
-            className="w-12 h-12" // Tailwind classes can still be used for sizing
+            width={48}
+            height={48}
+            className="w-12 h-12"
           />
         ),
       },
@@ -83,8 +85,98 @@ export const uiData = {
           />
         ),
       },
+      // --- NEW SKILLS ADDED ---
+      {
+        name: "Git",
+        icon: (
+          <Image
+            src="https://www.vectorlogo.zone/logos/git-scm/git-icon.svg"
+            alt="Git"
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
+        ),
+      },
+      {
+        name: "Tailwind",
+        icon: (
+          <Image
+            src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+            alt="Tailwind"
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
+        ),
+      },
+      {
+        name: "Bootstrap",
+        icon: (
+          <Image
+            src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg"
+            alt="Bootstrap"
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
+        ),
+      },
+      {
+        name: "Supabase",
+        icon: (
+          <Image
+            src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg"
+            alt="Supabase"
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
+        ),
+      },
+      {
+        name: "GoLang",
+        icon: (
+          <Image
+            src="https://www.vectorlogo.zone/logos/golang/golang-icon.svg"
+            alt="GoLang"
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
+        ),
+      },
+      {
+        name: "MySQL",
+        icon: (
+          <Image
+            src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg"
+            alt="MySQL"
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
+        ),
+      },
+    ],
+
+    // --- NEW HOBBIES SECTION ---
+    hobbies: [
+      {
+        name: "Music Production",
+        icon: <Music size={48} className="text-pink-400" />,
+        description:
+          "I enjoy producing electronic music, which requires patience and a structured, layered approach—skills that directly inform my development process.",
+      },
+      {
+        name: "Anime & Manga",
+        icon: <Zap size={48} className="text-red-500" />,
+        description:
+          "I'm an avid consumer of anime and manga, appreciating complex storytelling and world-building, and I find inspiration for unique UI/UX themes.",
+      },
     ],
   },
+
   services: {
     heading: "What I Do",
     items: [
