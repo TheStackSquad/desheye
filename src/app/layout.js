@@ -1,6 +1,12 @@
 //src/app/layout.js
 
-import { Cinzel_Decorative, Prata } from "next/font/google";
+import {
+  Cinzel_Decorative,
+  Prata,
+  Playfair_Display,
+  Outfit,
+  Abril_Fatface,
+} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/nav/Header";
 
@@ -20,9 +26,28 @@ const prata = Prata({
   display: "swap",
 });
 
+// New blog-specific Google Fonts
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"], 
+  weight: ["300", "400", "500", "600"],
+});
+
+const abril = Abril_Fatface({
+  variable: "--font-abril",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata = {
   // This is the new property that resolves the warning
-  metadataBase: new URL("https://headless-wordpress-teal.vercel.app/"),
+  metadataBase: new URL("https://desheye.vercel.app/"),
   title: "Desheye | Stacc Sessions - Full-Stack Developer & Technical Writer",
   description:
     "Adesheye's portfolio, showcasing full-stack development skills, innovative digital design, and in-depth technical writings on JavaScript, Next.js, and more. A hub for bringing digital ideas to life.",
@@ -45,7 +70,7 @@ export const metadata = {
     title: "Desheye | Stacc Sessions",
     description:
       "Desheye's portfolio, showcasing full-stack development skills, innovative digital design, and in-depth technical writings on JavaScript, Next.js, and more. A hub for bringing digital ideas to life.",
-    url: "https://headless-wordpress-teal.vercel.app/",
+    url: "https://desheye.vercel.app/",
     siteName: "Stacc Sessions",
     images: [
       {
@@ -77,8 +102,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        // Apply the new font CSS variables to the body
-        className={`${cinzel.variable} ${prata.variable} antialiased`}
+        className={`${cinzel.variable} ${prata.variable} ${playfair.variable} ${outfit.variable} ${abril.variable} antialiased`}
       >
         <Header />
         {children}

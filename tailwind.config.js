@@ -1,6 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  // Configure the files to scan for Tailwind classes
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,13 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Define the custom fonts to be used with Tailwind's `font-` utilities
       fontFamily: {
+        // Existing
         prata: ["var(--font-prata)"],
         cinzel: ["var(--font-cinzel)"],
+
+        // New blog-specific Google Fonts
+        playfair: ["var(--font-playfair)", "serif"], // Headings
+        outfit: ["var(--font-outfit)", "sans-serif"], // Body text
+        abril: ["var(--font-abril)", "serif"], // Accents
       },
     },
   },
-  darkMode: false,
   plugins: [],
 };
