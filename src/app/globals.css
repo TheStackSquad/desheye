@@ -28,3 +28,35 @@ p,
 span {
   font-family: var(--font-prata);
 }
+
+
+/* Blog heading styles */
+.blog-title {
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
+}
+
+.blog-body {
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 400;
+}
+
+.blog-accent {
+  font-family: var(--font-abril), serif;
+}
+
+/* Nigerian phrases like "o ga o!" would use abril for emphasis */
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
