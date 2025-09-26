@@ -1,0 +1,1 @@
+// src/animations/homeAnimate.js
