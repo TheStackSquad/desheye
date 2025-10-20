@@ -1,88 +1,46 @@
 // src/app/page.js
-// src/app/page.js
 "use client";
 
-import React from "react";
+import { motion } from "framer-motion";
+import AboutCta from "@/components/home/aboutCTA";
+import ExperienceCta from "@/components/home/experienceCTA";
+import ProjectsShowcase from "@/components/home/projectShowcase";
 import {
-  Twitter,
-  Linkedin,
-  Github,
-  Dribbble,
-  Mail,
-  Gem,
-  Globe,
-  Users,
-  PenTool,
-  Code,
-  BarChart,
-  Braces,
-  Layers,
-  Palette,
-  FileText,
-} from "lucide-react";
-import Homepage from "@/components/home/homePage";
+  gridVariants,
+  leftGridVariants,
+  rightGridVariants,
+} from "@/animation/homeAnimate";
 
-const Footer = () => (
-  <footer className="py-8 text-center text-gray-400">
-    {/* FIX: Add 'flex-wrap' to allow items to wrap to the next line on smaller screens. */}
-    {/* Also, change 'space-x-6' to a combination of 'gap-4' and 'justify-center' for better wrapping control. */}
-    <div className="flex flex-wrap justify-center gap-4 px-4">
-      <a href="#" className="hover:text-white transition-colors">
-        <Twitter size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Linkedin size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Github size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Dribbble size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Mail size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Gem size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Globe size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Users size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <PenTool size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Code size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <BarChart size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Braces size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Layers size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <Palette size={24} />
-      </a>
-      <a href="#" className="hover:text-white transition-colors">
-        <FileText size={24} />
-      </a>
-    </div>
-  </footer>
-);
-
-const Page = () => {
+export default function Home() {
   return (
-    <div className="bg-[#131728] text-white font-sans min-h-screen overflow-x-hidden">
-      <Homepage />
-      <Footer />
-    </div>
-  );
-};
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-4 md:p-8 lg:p-12">
+      <motion.div
+        variants={gridVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-[1400px] mx-auto"
+      >
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {/* Left Column */}
+          <motion.div
+            variants={leftGridVariants}
+            className="space-y-6 lg:space-y-8"
+          >
+            {/* Top Left - About CTA */}
+            <AboutCta />
 
-export default Page;
+            {/* Bottom Left - Experience CTA */}
+            <ExperienceCta />
+          </motion.div>
+
+          {/* Right Column */}
+          <motion.div variants={rightGridVariants} className="h-full">
+            {/* Projects Showcase */}
+            <ProjectsShowcase />
+          </motion.div>
+        </div>
+      </motion.div>
+    </main>
+  );
+}

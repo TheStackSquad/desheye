@@ -16,11 +16,11 @@ export const navigationLinks = [
     label: "Skill",
     href: "/skills",
   },
-  {
-    id: "work",
-    label: "Work",
-    href: "/work",
-  },
+  // {
+  //   id: "work",
+  //   label: "Work",
+  //   href: "/work",
+  // },
   {
     id: "blog",
     label: "Blog",
