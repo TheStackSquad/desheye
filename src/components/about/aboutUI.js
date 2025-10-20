@@ -1,83 +1,92 @@
-// src.components/about/aboutUi.js
-
+// src/components/about/aboutUi.js
 import React from "react";
-// Ensure you update the import path if necessary
 import { uiData } from "@/data/dataUI";
-// Import icons needed for cloning/rendering (if not already handled in dataUI)
-import { Music, Zap } from "lucide-react";
 
-const AboutUI = () => (
-  <div className="bg-[#181D30] p-6 md:p-12 rounded-3xl border border-gray-700 shadow-xl transition-transform duration-300 hover:scale-[1.01]">
-    {/* Section Header with Responsive Spacing */}
-    <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-8">
+const AboutUI = ({ cinzel }) => (
+  <div
+    className="bg-white p-6 md:p-12 rounded-3xl border border-amber-200/60
+  shadow-2xl hover:shadow-3xl transition-all duration-500 hover:translate-y-[-4px] 
+  backdrop-blur-sm relative overflow-hidden"
+  >
+    {/* Subtle background pattern */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-100/10 via-transparent to-transparent pointer-events-none" />
+
+    {/* Section Header */}
+    <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 relative z-10">
       <div>
-        <h2 className="text-2xl md:text-4xl font-bold text-yellow-400">
+        <h2
+          className={`${cinzel.variable} text-3xl md:text-5xl font-bold text-indigo-700 mb-3`}
+        >
           {uiData.about.heading}
         </h2>
-        {/* Adjusted subtitle for clarity */}
-        <p className="text-sm md:text-base text-gray-400 mt-2 md:mt-4">
-          A Full-Stack Developer and UI/UX Designer
+        <p className="text-lg md:text-xl text-slate-600 lead-text">
+          Full-Stack Developer & UI/UX Designer
         </p>
       </div>
     </div>
 
-    {/* Enhanced Description with Responsive Typography */}
-    <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-10">
-      {uiData.about.description}
-    </p>
+    {/* Enhanced Description */}
+    <p
+      className="text-slate-700 text-lg md:text-xl leading-relaxed mb-12 lead-text border-l-4 border-amber-400 pl-6 py-2 bg-amber-50/50 rounded-r-lg"
+      dangerouslySetInnerHTML={{ __html: uiData.about.description }}
+    />
 
     {/* Skills Grid */}
-    <h3 className="text-xl md:text-2xl font-semibold text-white mb-6 border-b border-gray-700 pb-2">
+    <h3 className={`${cinzel.variable} text-2xl md:text-3xl font-semibold text-slate-800 mb-8 pb-3 border-b border-amber-200/60 subtle-text`}>
       Technical Stack
     </h3>
-    <div
-      className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-y-10 
-    gap-x-4 md:gap-x-8 justify-items-center mb-12"
-    >
+    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 justify-items-center mb-16">
       {uiData.about.skills.map((skill, index) => (
-        <div key={index} className="flex flex-col items-center text-center">
+        <div
+          key={index}
+          className="flex flex-col items-center text-center group"
+        >
           <div
-            className="bg-gray-800 p-3 md:p-4 rounded-full flex items-center justify-center 
-          h-16 w-16 md:h-20 md:w-20 shadow-lg"
+            className="bg-white p-4 rounded-2xl flex items-center justify-center 
+            h-20 w-20 shadow-lg border border-amber-100 group-hover:shadow-xl 
+            group-hover:border-indigo-300 group-hover:scale-110 transition-all duration-300"
           >
-            {/* The icon/image itself should be responsive */}
             {React.cloneElement(skill.icon, {
-              className: "w-10 h-10 md:w-12 md:h-12",
+              className:
+                "w-10 h-10 text-indigo-600 group-hover:text-indigo-700 transition-colors",
             })}
           </div>
-          <p className="text-white text-sm md:text-base mt-3 font-medium">
+          <p className="text-slate-700 text-sm font-medium mt-4 group-hover:text-slate-900 transition-colors">
             {skill.name}
           </p>
         </div>
       ))}
     </div>
 
-    {/* --- NEW HOBBIES SECTION --- */}
-    <h3 className="text-xl md:text-2xl font-semibold text-white mb-6 border-b border-gray-700 pb-2">
+    {/* Hobbies Section */}
+    <h3 className={`${cinzel.variable}text-2xl md:text-3xl font-semibold text-slate-800 mb-8 pb-3 border-b border-amber-200/60 subtle-text`}>
       Personal Interests
     </h3>
-    <div className="flex flex-col lg:flex-row gap-8">
+    <div className="flex flex-col lg:flex-row gap-6">
       {uiData.about.hobbies.map((hobby, index) => (
         <div
           key={index}
-          className="flex items-start space-x-4 p-4 rounded-lg bg-[#202538] flex-1"
+          className="flex items-start space-x-4 p-6 rounded-2xl bg-white/80 
+          border border-amber-100 shadow-lg hover:shadow-xl hover:border-indigo-200 
+          transition-all duration-300 flex-1 group backdrop-blur-sm"
         >
           <div className="flex-shrink-0 pt-1">
-            {/* The icon itself, using cloneElement to manage size */}
             {React.cloneElement(hobby.icon, {
-              className: "w-8 h-8 md:w-10 md:h-10",
+              className:
+                "w-8 h-8 md:w-10 md:h-10 text-amber-600 group-hover:text-indigo-600 transition-colors",
             })}
           </div>
           <div>
-            <p className="text-lg font-semibold text-yellow-300 mb-1">
+            <p className="text-lg font-semibold text-indigo-700 mb-2 accent-text">
               {hobby.name}
             </p>
-            <p className="text-gray-400 text-sm">{hobby.description}</p>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              {hobby.description}
+            </p>
           </div>
         </div>
       ))}
     </div>
-    {/* --- END HOBBIES SECTION --- */}
   </div>
 );
 

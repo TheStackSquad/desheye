@@ -7,7 +7,7 @@ import ExperienceUI from "@/components/experience/experienceUI";
 
 const ExperiencePage = () => {
   return (
-    <div className="bg-[#131728] text-white font-sans min-h-screen">
+    <div className="bg-gray-350 py-5 mb-7 text-black min-h-screen">
     <ExperienceUI/>
     </div>
   );

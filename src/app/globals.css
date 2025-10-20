@@ -45,7 +45,7 @@ span {
   font-family: var(--font-abril), serif;
 }
 
-/* Nigerian phrases like "o ga o!" would use abril for emphasis */
+
 
 .line-clamp-2 {
   overflow: hidden;

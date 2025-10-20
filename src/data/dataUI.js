@@ -14,13 +14,16 @@ export const uiData = {
   about: {
     heading: "A Little About Me",
     description: `A Fullstack Developer and UI/UX Designer, I have been designing and building user 
-      interfaces for over a decade. I have a passion for creating beautiful and intuitive 
-      digital experiences. My work is a blend of creative design and technical development.
-      I am always exploring new technologies and frameworks to improve my skills and stay 
-      updated with the latest trends. I am a detail-oriented person who loves to solve complex 
-      problems and create user-friendly solutions. I have worked on a variety of projects,
-      from small business websites to large-scale enterprise applications. 
-      I love to collaborate with teams and build products that make a difference in people's lives.`,
+interfaces for over a decade.<br>
+I have a passion for creating beautiful and intuitive
+digital experiences. My work is a blend of creative design and technical development.<br>
+<br>
+I am always exploring new technologies and frameworks to improve my skills and stay 
+updated with the latest trends. I am a detail-oriented person who loves to solve complex 
+problems and create user-friendly solutions.<br><br>
+I have worked on a variety of projects,
+from small business websites to large-scale enterprise applications. 
+I love to collaborate with teams and build products that make a difference in people's lives.`,
 
     // --- UPDATED SKILLS SECTION ---
     skills: [
