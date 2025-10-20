@@ -14,7 +14,8 @@ const SkillCard = ({ name, icon }) => (
     variants={textStaggerVariants}
     whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.08)" }}
     whileTap={{ scale: 0.98 }}
-    className="flex flex-col items-center justify-center p-3 sm:p-4 border border-gray-100 rounded-xl bg-white transition-all duration-300 cursor-pointer text-center"
+    className="flex flex-col items-center justify-center p-3 sm:p-4 border
+    border-gray-100 rounded-xl bg-white transition-all duration-300 cursor-pointer text-center"
   >
     {/* Icon is pre-sized in uiData, so we just render it */}
     <div className="mb-2">{icon}</div> 
@@ -28,7 +29,7 @@ export default function SkillCta() {
   return (
     <motion.div
       variants={containerStagger}
-      className="relative flex flex-col h-[630px] bg-gray-50 rounded-[2rem] p-6  py-9 mb-5 md:p-8 overflow-hidden"
+      className="relative flex flex-col h-[650px] lg:h-[630px] bg-gray-50 bg-gray-300 rounded-[2rem] p-6  py-9 mb-5 md:p-8 overflow-hidden"
     >
       {/* Title/Header */}
       <div className="mb-8 flex items-center gap-3">
@@ -36,9 +37,7 @@ export default function SkillCta() {
         <h2 className="text-2xl font-bold text-gray-900">Core Tech Stack</h2>
       </div>
 
-      {/* ========================================================== */}
-      {/* 4x4 GRID LAYOUT (Responsive)                               */}
-      {/* ========================================================== */}
+
       <div
         className="grid grid-cols-3 sm:grid-cols-4 gap-3 md:gap-4 flex-grow"
       >

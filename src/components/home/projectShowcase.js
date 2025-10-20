@@ -19,13 +19,8 @@ const projects = uiData.featuredWork.projects;
 
 // --- Project Card Component ---
 const ProjectCard = ({ project, index }) => {
-  // Construct the slug page link (assuming project title is converted to a slug)
-  // For a simple ID-based system, we'll use the index for demonstration,
-  // but a unique ID from the data would be better in production.
   const slug = project.title.toLowerCase().replace(/\s+/g, "-");
   const href = `/work/${slug}`;
-
-  // NOTE: If your slug page uses a numerical ID, replace 'slug' with a unique ID from your project data.
 
   return (
     <Link href={href}>
@@ -34,20 +29,20 @@ const ProjectCard = ({ project, index }) => {
         variants={cardStaggerVariants}
         whileHover={{ scale: 1.02 }} // Subtle card lift
         whileTap={{ scale: 0.98 }}
-        className="block bg-white rounded-3xl p-4 h-[400px] sm:p-6 shadow-xl hover:shadow-2xl 
-        transition-all duration-300 overflow-hidden group"
+        className="block bg-white rounded-3xl px-2 py-4 h-[400px] sm:p-6 shadow-2xl hover:shadow-3xl 
+        transition-all duration-300 overflow-hidden group shadow-gray-200/50 hover:shadow-gray-300/60"
       >
         {/* Project Image */}
         <div className="relative w-full h-[200px]  lg:h-[200px] sm:h-64 rounded-xl overflow-hidden mb-4">
           {/* Using a placeholder since the image is likely not available in this environment */}
           <div className="w-full h-[200px]  lg:h-[300px] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
             {/* If using a real image, uncomment this: */}
-            <Image 
-               src={project.image} 
-               alt={project.title} 
-               fill 
-               className="object-cover transition-transform duration-500 group-hover:scale-105"
-             />
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
             <span className="text-gray-500 text-sm">{project.title} Image</span>
           </div>
         </div>
@@ -88,7 +83,7 @@ export default function ProjectsShowcase() {
     <motion.div
       variants={containerStagger}
       // Stack layout for both viewports, using space-y for separation
-      className="flex flex-col h-full min-h-[600px] bg-gray-50 rounded-[2rem] p-6 md:p-8 overflow-hidden"
+      className="flex flex-col h-full min-h-[600px] bg-gray-50 rounded-[2rem] p-1 md:p-8 overflow-hidden"
     >
       {/* Header */}
       <motion.div variants={textStaggerVariants} className="mb-8">

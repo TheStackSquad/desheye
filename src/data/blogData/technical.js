@@ -31,14 +31,44 @@ export const technicalBlogPosts = [
     },
 
     // Content with HTML tags instead of markdown
-    content: `
-<h1>Go: The Full-Stack Powerhouse You Didn't Know You Needed</h1>
+    content: ` Go: The Full-Stack Powerhouse You Didn't Know You Needed <br>
 
-<p>For full-stack developers constantly striving for speed and performance, the search for the perfect language often feels like an endless quest. While JavaScript frameworks dominate the front-end and various languages compete on the back-end, Google's Go (Golang) is quietly emerging as a formidable contender, offering a compelling alternative that brings raw power and efficiency to the entire stack. Designed with simplicity, concurrency, and robust performance in mind, Go excels in scenarios where traditional languages might stumble, making it ideal for building everything from lightning-fast APIs to high-performance microservices. Its minimalist syntax and powerful standard library allow developers to write clean, efficient code that's easy to maintain and scale.</p>
+For full-stack developers constantly striving for speed and performance,
+the search for the perfect language often feels like an endless quest.<br><br>
+While JavaScript frameworks dominate the front-end and various languages compete on the back-end,
+Google's Go (Golang) is quietly emerging as a formidable contender, offering a compelling alternative
+that brings raw power and efficiency to the entire stack.<br><br>
+Designed with simplicity, concurrency, and robust performance in mind, Go excels in
+scenarios where traditional languages might stumble, making it ideal for building
+everything from lightning-fast APIs to high-performance microservices. <br>
+Its minimalist syntax and powerful standard library allow developers to write clean,
+efficient code that's easy to maintain and scale. <br><br>
 
-<p>One of Go's most significant advantages lies in its compiled nature and impressive concurrency model. Unlike interpreted languages, Go compiles directly to machine code, resulting in execution speeds comparable to C or C++. This translates to significantly faster application response times and lower resource consumption, critical factors for modern web applications handling heavy traffic. Furthermore, Go's goroutines and channels provide a built-in, elegant way to handle concurrent operations, allowing developers to easily build applications that can perform multiple tasks simultaneously without the complexity often associated with multi-threading in other languages. This inherent ability to manage concurrent processes efficiently is a game-changer for building real-time features and scalable backend systems.</p>
+One of Go's most significant advantages lies in its compiled nature and impressive concurrency model.<br>
+Unlike interpreted languages, Go compiles directly to machine code, resulting in execution speeds
+comparable to C or C++. <br><br>
+This translates to significantly faster application response times and lower resource consumption,
+critical factors for modern web applications handling heavy traffic.<br><br>
+Furthermore, Go's goroutines and channels provide a built-in, elegant way to
+handle concurrent operations, allowing developers to easily build applications
+that can perform multiple tasks simultaneously without the complexity often associated
+with multi-threading in other languages.<br><br>
 
-<p>Moving beyond raw performance, Go also offers a refreshing development experience that prioritizes developer productivity. Its static typing catches errors early in the development cycle, while its powerful tooling, including a built-in formatter and linter, ensures consistent code quality across teams. For full-stack developers looking to optimize their workflow and build high-performing applications from the ground up, Go presents an undeniable value proposition. It's not just about speed; it's about building reliable, scalable, and efficient systems with a language that's a joy to work with. If you're ready to elevate your full-stack projects, it's time to give Go a serious look.</p>
+This inherent ability to manage concurrent processes efficiently is a game-changer for
+building real-time features and scalable backend systems.<br><br>
+
+Moving beyond raw performance, Go also offers a refreshing
+development experience that prioritizes developer productivity.<br>
+Its static typing catches errors early in the development cycle,
+while its powerful tooling, including a built-in formatter and linter,
+ensures consistent code quality across teams.<br><br>
+
+For full-stack developers
+looking to optimize their workflow and build high-performing applications
+from the ground up, Go presents an undeniable value proposition.<br>
+It's not just about speed; it's about building reliable, scalable, and efficient
+systems with a language that's a joy to work with. If you're ready to elevate
+your full-stack projects, it's time to give Go a serious look.<br>
 `,
   },
   {
@@ -72,48 +102,79 @@ export const technicalBlogPosts = [
 
     // Content with HTML tags instead of markdown
     content: `
-<h1>Is Your Code AI-Generated? Why That's the Wrong Question.</h1>
+Is Your Code AI-Generated? Why That's the Wrong Question.<br>
 
-<p><strong>The evolution of the web developer role from manual coder to high-level system architect.</strong></p>
+The evolution of the web developer role from manual coder to high-level system architect.
 
-<p>"Are you even a developer if you're not writing every line yourself?"</p>
+"Are you even a developer if you're not writing every line yourself?"<br>
 
-<p>That question? It's <strong>vibes</strong> from two generations ago. Let's be honest, in this tech ecosystem—especially here in Lagos—we are moving too fast for that kind of gatekeeping.</p>
+That question? It's vibes from two generations ago. <br>
+Let's be honest, in this tech ecosystem—especially here in Lagos—we are moving too fast
+for that kind of gatekeeping. <br>
 
-<p>The simple truth is, if the biggest thing you worry about is who or what typed the semicolons, then <strong>o ga o!</strong> (meaning: "it's serious/wow!"). You're looking at the wrong part of the stack.</p>
+The simple truth is, if the biggest thing you worry about is who or what typed the semicolons,
+then o ga o! (meaning: "it's serious/wow!").<br>
 
-<h2>From Coder to Architect: The Abstraction Sapa</h2>
+You're looking at the wrong part of the stack.<br>
 
-<p>Twenty years ago, a developer was defined by their mastery of raw syntax. Today, that definition has undergone a full system update. AI tools like Copilot, Claude, and Gemini are not replacing you; they are replacing the <strong>sapa</strong> (poverty/grind) of manually writing repetitive boilerplate.</p>
+From Coder to Architect: The Abstraction Sapa <br>
 
-<p>Think of it this way: Nobody calls a mechanical engineer less of an engineer because they use CAD software instead of a pencil and ruler. The computer handles the tedious drawing; the engineer handles the <strong>design</strong>.</p>
+Twenty years ago, a developer was defined by their mastery of raw syntax.<br>
+Today, that definition has undergone a full system update. AI tools like Copilot,
+Claude, and Gemini are not replacing you; they are replacing the sapa (poverty/grind)
+of manually writing repetitive boilerplate.<br>
 
-<p>AI is just our new, faster pencil.</p>
+Think of it this way: Nobody calls a mechanical engineer less of an engineer
+because they use CAD software instead of a pencil and ruler.<br>
+The computer handles the tedious drawing; the engineer handles the design.<br>
 
-<h2>The New Developer Requirements: Vision over Typing</h2>
+AI is just our new, faster pencil.<br>
 
-<p>The value of a web developer is no longer measured in lines of code written, but in the complexity of the problems solved. The focus has shifted from low-level execution to high-level strategy. Your new currency is <strong>critical thinking</strong>.</p>
+The New Developer Requirements: Vision over Typing
 
-<p>Here are the three roles that actually define a modern web developer:</p>
+The value of a web developer is no longer measured in lines of code written,
+but in the complexity of the problems solved.<br>
+The focus has shifted from low-level execution to high-level strategy.<br><br>
+Your new currency is critical thinking.
 
-<h3>1. The System Architect</h3>
-<p>This is your <strong>big boy</strong> role. An AI can write a beautiful function, but it has zero clue how your Next.js frontend should securely talk to your PostgreSQL database, how your caching layer should be structured, or how to handle the logic flow. The modern developer designs the <strong>entire system architecture</strong>—the blueprint. AI is a worker bee; you are the <strong>Chief Architect</strong>.</p>
+Here are the three roles that actually define a modern web developer:
 
-<h3>2. The Prompt Engineer</h3>
-<p>Coding has become a conversational skill. You must know the right questions to ask the AI to get clean, effective, and secure code. If the AI output is slow, buggy, or full of vulnerabilities, it's not the AI's fault; it's the fault of the developer who failed to ask for and validate a clean solution. This requires an even deeper understanding of the code than before.</p>
+1. The System Architect
 
-<h3>3. The Quality Assurance & Integrator</h3>
-<p>When multiple AI-generated components meet your existing codebase and, <strong>baba God!</strong>, they start fighting, only a human developer can step in and reconcile the mess. You are the final layer of quality control, security review, and integration sanity. You must possess the foundational knowledge to debug, refactor, and integrate code—regardless of its origin.</p>
+This is your big boy role. An AI can write a beautiful function,
+but it has zero clue how your Next.js frontend should securely talk to your PostgreSQL
+database, how your caching layer should be structured, or how to handle the logic flow.<br>
+The modern developer designs the entire system architecture—the blueprint.<br>
+AI is a worker bee; you are the Chief Architect.<br><br>
 
-<h2>Final Takeaway: Focus on the Vision</h2>
+2. The Prompt Engineer<br>
 
-<p>The question is not, "Is your code AI-generated?"</p>
+Coding has become a conversational skill.<br>
+You must know the right questions to ask the AI to get clean, effective, and secure code.<br>
+If the AI output is slow, buggy, or full of vulnerabilities, it's not the AI's fault;
+it's the fault of the developer who failed to ask for and validate a clean solution.<br>
+This requires an even deeper understanding of the code than before.
 
-<p>The right question is, <strong>"Did you solve the problem, and is the solution robust, scalable, and secure?"</strong></p>
+3. The Quality Assurance & Integrator
 
-<p>If you are using cutting-edge tools to deliver better value, faster, and focusing on the high-level design that brings the product to life, then my dear, you are not just a web developer—you are a <strong>tech visionary</strong>.</p>
+When multiple AI-generated components meet your existing codebase and, baba God!,
+they start fighting, only a human developer can step in and reconcile the mess.<br>
+You are the final layer of quality control, security review,
+and integration sanity. You must possess the foundational knowledge to debug,
+refactor, and integrate code—regardless of its origin.<br><br>
 
-<p>Now, go and make that money! <strong>E go better!</strong> (meaning: "It will be better/things will be good!")</p>
+Final Takeaway: Focus on the Vision<br>
+
+The question is not, "Is your code AI-generated?"<br>
+
+The right question is, "Did you solve the problem, and is the solution robust,
+scalable, and secure?"<br><br>
+
+If you are using cutting-edge tools to deliver better value, faster, and
+focusing on the high-level design that brings the product to life, then my dear,
+you are not just a web developer—you are a tech visionary.<br><br>
+
+Now, go and make that money! E go better! (meaning: "It will be better/things will be good!")
 `,
   },
 ];

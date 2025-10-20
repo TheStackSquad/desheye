@@ -29,7 +29,9 @@ export default function ShareButton({ postTitle, postExcerpt }) {
   return (
     <button
       type="button"
-      className="inline-flex items-center gap-2 px-3 py-2 bg-slate-800/60 text-slate-300 rounded-lg hover:bg-slate-700/60 transition-all duration-200 text-sm font-medium backdrop-blur-sm border border-slate-700/50"
+      className="inline-flex items-center gap-2 px-3 py-2 bg-black text-white rounded-lg
+      hover:bg-white hover:text-black transition-all duration-200 text-sm font-medium
+      backdrop-blur-sm border border-slate-700/50"
       onClick={handleShare}
     >
       <svg
