@@ -1,4 +1,4 @@
-//src/app/layout.js
+// src/app/layout.js
 
 import {
   Cinzel_Decorative,
@@ -10,7 +10,8 @@ import {
 import "./globals.css";
 import Header from "@/components/common/nav/Header";
 
-// Configure Cinzel Decorative font with variable name
+// Configure Google Fonts... (cinzel, prata, playfair, outfit, abril)
+
 const cinzel = Cinzel_Decorative({
   variable: "--font-cinzel",
   subsets: ["latin"],
@@ -18,15 +19,13 @@ const cinzel = Cinzel_Decorative({
   display: "swap",
 });
 
-// Configure Prata font with variable name
 const prata = Prata({
   variable: "--font-prata",
-  weight: "400", // Prata only has a single weight
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
 
-// New blog-specific Google Fonts
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -35,7 +34,7 @@ const playfair = Playfair_Display({
 
 const outfit = Outfit({
   variable: "--font-outfit",
-  subsets: ["latin"], 
+  subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
 });
 
@@ -45,8 +44,9 @@ const abril = Abril_Fatface({
   weight: ["400"],
 });
 
+// 🚀 METADATA EXPORT 🚀
 export const metadata = {
-  // This is the new property that resolves the warning
+  // Base URL for relative paths (e.g., /img/Desheye.png)
   metadataBase: new URL("https://desheye.vercel.app/"),
   title: "Desheye | Stacc Sessions - Full-Stack Developer & Technical Writer",
   description:
@@ -69,12 +69,12 @@ export const metadata = {
   openGraph: {
     title: "Desheye | Stacc Sessions",
     description:
-      "Desheye's portfolio, showcasing full-stack development skills, innovative digital design, and in-depth technical writings on JavaScript, Next.js, and more. A hub for bringing digital ideas to life.",
+      "Adesheye's portfolio, showcasing full-stack development skills, innovative digital design, and in-depth technical writings on JavaScript, Next.js, and more. A hub for bringing digital ideas to life.",
     url: "https://desheye.vercel.app/",
     siteName: "Stacc Sessions",
     images: [
       {
-        url: "/img/Desheye.png", // This URL now correctly resolves from metadataBase
+        url: "/img/Desheye.png", // Correctly resolves to https://desheye.vercel.app/img/Desheye.png
         width: 1200,
         height: 630,
         alt: "Desheye's Stacc Sessions Portfolio",
@@ -89,8 +89,8 @@ export const metadata = {
     creator: "@TheStacSessions",
     title: "Desheye | Stacc Sessions",
     description:
-      "Desheye's portfolio, showcasing full-stack development skills, innovative digital design, and in-depth technical writings on JavaScript, Next.js, and more.",
-    // The image URL is now a full, correct URL
+      "Adesheye's portfolio, showcasing full-stack development skills, innovative digital design, and in-depth technical writings on JavaScript, Next.js, and more.",
+    // The image URL is a full, correct URL and does not need metadataBase
     images: {
       url: "https://pbs.twimg.com/profile_images/1931116500032872448/TM8fZt96.jpg",
       alt: "Desheye's Stacc Sessions Portfolio",
