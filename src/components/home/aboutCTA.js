@@ -9,7 +9,9 @@ export default function AboutCta() {
   return (
     <motion.div
       variants={containerStagger}
-      className="relative flex flex-col justify-between min-h-[450px] sm:min-h-[500px] lg:min-h-[550px] bg-gradient-to-br from-amber-700 via-orange-600 to-rose-600 rounded-[2rem] p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
+      className="relative flex flex-col justify-between min-h-[450px]
+      sm:min-h-[500px] lg:min-h-[550px] bg-gradient-to-br from-amber-700
+      via-orange-600 to-rose-600 rounded-[2rem] p-6 sm:p-8 md:p-7 lg:p-3 overflow-hidden"
     >
       {/* Enhanced gradient overlay for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
@@ -108,18 +110,21 @@ export default function AboutCta() {
       </div>
 
       {/* BOTTOM SECTION */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end w-full z-10 gap-8 sm:gap-6 md:gap-8">
+      <div
+        className="flex flex-col sm:flex-row justify-content: space-between items-start sm:items-end w-full z-10
+      gap-3 sm:gap-2 md:gap-2 W-full"
+      >
         {/* Name & Icon */}
         <motion.div
           variants={textStaggerVariants}
-          className="flex items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8"
+          className="flex items-center gap-2 sm:gap-5 md:gap-2 lg:gap-4"
         >
           <motion.div variants={textStaggerVariants} className="flex-shrink-0">
             <Code2 className="w-10 h-10 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white drop-shadow-lg" />
           </motion.div>
           <motion.h2
             variants={textStaggerVariants}
-            className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight"
+            className="text-6xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight"
           >
             Desheye
           </motion.h2>

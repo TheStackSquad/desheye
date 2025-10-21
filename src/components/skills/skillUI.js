@@ -1,4 +1,4 @@
-//src/components/skills/skillUI.js
+// src/components/skills/skillUI.js
 
 import React from "react";
 import { uiData } from "@/data/dataUI";
@@ -14,8 +14,8 @@ const SkillUI = () => (
           style={{ animationDelay: "0.5s" }}
         />
 
-        <h2 className="relative text-4xl md:text-5xl font-bold text-white mb-2">
-          <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+        <h2 className="relative text-4xl md:text-5xl font-bold text-black mb-2">
+          <span className="text-black">
             {uiData.services.heading}
           </span>
         </h2>
@@ -26,7 +26,7 @@ const SkillUI = () => (
           A Frontend Developer and UI/UX Designer
         </p>
         {/* Subtle underline */}
-        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent" />
+        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gray-100" />
       </div>
     </div>
 
@@ -43,8 +43,12 @@ const SkillUI = () => (
           {/* Animated background glow */}
           <div className="absolute -inset-1 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out" />
 
-          {/* Main card */}
-          <div className="relative h-full p-8 bg-gradient-to-br from-[#1a1f35] to-[#181D30] rounded-2xl border border-gray-700/50 shadow-lg backdrop-blur-sm transform transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2 group-hover:border-gray-600/70 group-hover:shadow-2xl group-hover:shadow-purple-500/10">
+          {/* Main card - FIXED: Using backticks for the multiline string */}
+          <div
+            className={`relative h-full p-8 bg-gray-200 rounded-2xl border border-gray-700/50 shadow-lg
+            backdrop-blur-sm transform transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2
+            group-hover:border-gray-600/70 group-hover:shadow-2xl group-hover:shadow-purple-500/10`}
+          >
             {/* Inner glow effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -52,18 +56,18 @@ const SkillUI = () => (
             <div className="relative z-10 h-full flex flex-col">
               {/* Service number indicator */}
               <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center border border-gray-600/30 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                <span className="text-xs font-bold text-purple-300 group-hover:text-purple-200 transition-colors duration-300">
+                <span className="text-xs font-bold text-black group-hover:text-purple-200 transition-colors duration-300">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 group-hover:bg-clip-text transition-all duration-500">
+              <h3 className="text-xl md:text-2xl font-bold text-black mb-4 group-hover:text-white group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:to-purple-300 group-hover:bg-clip-text transition-all duration-500">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed flex-grow group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-gray-800 text-sm md:text-base leading-relaxed flex-grow group-hover:text-gray-300 transition-colors duration-300">
                 {service.description}
               </p>
 
