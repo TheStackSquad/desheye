@@ -239,36 +239,44 @@ I love to collaborate with teams and build products that make a difference in pe
     projects: [
       {
         title: "JollyBargain E-commerce",
+        // 🔑 New Slug property added
+        slug: "jollybargain-e-commerce",
         tagline: "Scalable E-commerce with State Management Power",
         description:
-          "A feature-rich e-commerce platform built with **Next.js** and **Redux** for robust state management. The focus was on delivering a seamless shopping experience, demonstrating expertise in building scalable, component-based applications with advanced front-end logic.",
-        image: "/img/jollyBargain.png", // Assuming /img is the web-accessible path
+          "A feature-rich e-commerce platform built with **Next.js** and **Redux** for robust state management. The focus was on delivering a seamless shopping experience...",
+        image: "/img/jollyBargain.png",
         liveLink: "https://jolly-bargain-9d66.vercel.app/",
         githubLink: "https://github.com/TheStackSquad/jollyBargain",
       },
       {
         title: "Bandhit Ticketing Platform",
+        // 🔑 New Slug property added
+        slug: "bandhit-ticketing-platform",
         tagline: "Full-Stack Event Ticketing & Management",
         description:
-          "A comprehensive, full-stack event solution featuring a modern **Next.js** frontend and a dedicated **Express.js backend**. This project showcases proficiency in developing secure APIs, integrating front-end with backend services, and handling complex user authentication flows.",
+          "A comprehensive, full-stack event solution featuring a modern **Next.js** frontend and a dedicated **Express.js backend**...",
         image: "/img/bandhit.png",
         liveLink: "https://bandhit.vercel.app/welcome",
         githubLink: "https://github.com/TheStackSquad/bandhit",
       },
       {
         title: "OnFolio SaaS Template",
+        // 🔑 New Slug property added
+        slug: "onfolio-saas-template",
         tagline: "Dynamic Template SaaS Application",
         description:
-          "A highly functional template for a Software as a Service (SaaS) application developed entirely with **Next.js**. It demonstrates rapid development capability, routing architecture, and building reusable UI components necessary for modern subscription-based products.",
+          "A highly functional template for a Software as a Service (SaaS) application developed entirely with **Next.js**...",
         image: "/img/onFolio.png",
         liveLink: "https://onfolio.vercel.app/explore",
         githubLink: "https://github.com/TheStackSquad/onfolio",
       },
       {
         title: "Ikeja Government Portal",
+        // 🔑 New Slug property added
+        slug: "ikeja-government-portal",
         tagline: "Modernizing Public Sector Web Presence",
         description:
-          "A professional government information website developed using **Next.js**. This project emphasizes design accessibility, performance optimization, and responsive design, ensuring a fast and intuitive experience for citizens accessing public sector information.",
+          "A professional government information website developed using **Next.js**...",
         image: "/img/ikeja.png",
         liveLink: "https://ikeja.vercel.app/",
         githubLink: "https://github.com/TheStackSquad/ikeja",
