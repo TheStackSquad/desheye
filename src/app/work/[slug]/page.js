@@ -115,14 +115,14 @@ export default function ProjectPage({ params }) {
     >
       {/* Back Button with enhanced styling */}
       <motion.div variants={slideInLeft} className="mb-12">
-        <Link href="/work">
+        <Link href="/">
           <motion.button
             whileHover={{ x: -4 }}
             whileTap={{ scale: 0.95 }}
             className="text-gray-600 hover:text-indigo-600 transition-all flex items-center gap-2 font-semibold group bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-            Back to Work
+            Back
           </motion.button>
         </Link>
       </motion.div>
@@ -139,7 +139,8 @@ export default function ProjectPage({ params }) {
 
         <motion.h1
           variants={slideUp}
-          className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 bg-clip-text text-transparent leading-tight mb-4"
+          className="text-4xl md:text-7xl font-extrabold bg-gradient-to-r
+          from-gray-900 via-indigo-900 to-purple-900 bg-clip-text text-transparent leading-tight mb-4"
         >
           {project.title}
         </motion.h1>
@@ -160,7 +161,8 @@ export default function ProjectPage({ params }) {
           {/* Main Image with parallax effect */}
           <motion.div
             variants={scaleIn}
-            className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-indigo-100 to-purple-100 group"
+            className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl
+            bg-gradient-to-br from-indigo-100 to-purple-100 group"
           >
             <Image
               src={project.image || "/placeholder.jpg"}
