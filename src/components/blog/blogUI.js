@@ -4,14 +4,14 @@ import { technicalBlogPosts } from "@/data/blogData/technical";
 
 const BlogUI = () => {
   return (
-    <div className="min-h-screen bg-[#131728] py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
         <header className="text-center mb-16">
-          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
             Tech Insights & Stories
           </h1>
-          <p className="font-outfit text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="font-outfit text-black text-lg max-w-2xl mx-auto">
             Exploring the future of web development, AI integration, and the
             evolving role of developers in the modern tech ecosystem.
           </p>
