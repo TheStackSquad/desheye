@@ -1,8 +1,12 @@
 // src/components/blog/BlogUI.js
 import BlogGrid from "@/components/blog/blogGrid";
 import { technicalBlogPosts } from "@/data/blogData/technical";
+import { designBlogPosts } from "@/data/blogData/design";
 
 const BlogUI = () => {
+  // 1. Combine all blog posts into one array
+  const allBlogPosts = [...technicalBlogPosts, ...designBlogPosts];
+
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -17,8 +21,8 @@ const BlogUI = () => {
           </p>
         </header>
 
-        {/* Blog Grid */}
-        <BlogGrid posts={technicalBlogPosts} />
+        {/* Blog Grid - Now shows ALL posts */}
+        <BlogGrid posts={allBlogPosts} />
 
         {/* Load More/Footer (for future pagination) */}
         <div className="text-center mt-16">

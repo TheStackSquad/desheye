@@ -30,45 +30,54 @@ export const technicalBlogPosts = [
       },
     },
 
-    content: ` Go: The Full-Stack Powerhouse You Didn't Know You Needed <br>
+    content: ` 
+      <b>Go: The Full-Stack Powerhouse You Didn't Know You Needed</b> <br>
 
-For full-stack developers constantly striving for speed and performance,
-the search for the perfect language often feels like an endless quest.<br><br>
-While JavaScript frameworks dominate the front-end and various languages compete on the back-end,
-Google's Go (Golang) is quietly emerging as a formidable contender, offering a compelling alternative
-that brings raw power and efficiency to the entire stack.<br><br>
-Designed with simplicity, concurrency, and robust performance in mind, Go excels in
-scenarios where traditional languages might stumble, making it ideal for building
-everything from lightning-fast APIs to high-performance microservices. <br>
-Its minimalist syntax and powerful standard library allow developers to write clean,
-efficient code that's easy to maintain and scale. <br><br>
+      For full-stack developers constantly striving for <b>speed and performance</b>,
+      the search for the perfect language often feels like an endless quest.<br><br>
+      While JavaScript frameworks dominate the front-end and various languages compete on the back-end,
+      Google's <b>Go (Golang)</b> is quietly emerging as a formidable contender, offering a compelling alternative
+      that brings <b>raw power and efficiency</b> to the entire stack.<br><br>
+      Designed with <b>simplicity, concurrency, and robust performance</b> in mind, Go excels in
+      scenarios where traditional languages might stumble, making it ideal for building
+      everything from lightning-fast APIs to high-performance microservices. <br>
+      Its minimalist syntax and powerful standard library allow developers to write <b>clean,
+      efficient code</b> that's easy to maintain and scale. <br><br>
 
-One of Go's most significant advantages lies in its compiled nature and impressive concurrency model.<br>
-Unlike interpreted languages, Go compiles directly to machine code, resulting in execution speeds
-comparable to C or C++. <br><br>
-This translates to significantly faster application response times and lower resource consumption,
-critical factors for modern web applications handling heavy traffic.<br><br>
-Furthermore, Go's goroutines and channels provide a built-in, elegant way to
-handle concurrent operations, allowing developers to easily build applications
-that can perform multiple tasks simultaneously without the complexity often associated
-with multi-threading in other languages.<br><br>
+      <hr><br>
 
-This inherent ability to manage concurrent processes efficiently is a game-changer for
-building real-time features and scalable backend systems.<br><br>
+      <b>The Speed Advantage: Compiled Power and Concurrency</b> <br>
 
-Moving beyond raw performance, Go also offers a refreshing
-development experience that prioritizes developer productivity.<br>
-Its static typing catches errors early in the development cycle,
-while its powerful tooling, including a built-in formatter and linter,
-ensures consistent code quality across teams.<br><br>
+      One of Go's most significant advantages lies in its <b>compiled nature</b> and impressive <b>concurrency model</b>.<br>
+      Unlike interpreted languages, Go compiles directly to machine code, resulting in execution speeds
+      comparable to C or C++. <br><br>
+      This translates to significantly <b>faster application response times</b> and lower resource consumption,
+      critical factors for modern web applications handling heavy traffic.<br><br>
+      Furthermore, Go's <b>goroutines and channels</b> provide a built-in, elegant way to
+      handle concurrent operations, allowing developers to easily build applications
+      that can perform multiple tasks simultaneously without the complexity often associated
+      with multi-threading in other languages.<br><br>
 
-For full-stack developers
-looking to optimize their workflow and build high-performing applications
-from the ground up, Go presents an undeniable value proposition.<br>
-It's not just about speed; it's about building reliable, scalable, and efficient
-systems with a language that's a joy to work with. If you're ready to elevate
-your full-stack projects, it's time to give Go a serious look.<br>
-`,
+      This inherent ability to manage concurrent processes efficiently is a game-changer for
+      building <b>real-time features</b> and <b>scalable backend systems</b>.<br><br>
+
+       <hr><br>
+
+      <b>Prioritizing Developer Experience</b> <br>
+
+      Moving beyond raw performance, Go also offers a refreshing
+      development experience that prioritizes <b>developer productivity</b>.<br>
+      Its <b>static typing</b> catches errors early in the development cycle,
+      while its powerful tooling, including a built-in formatter and linter,
+      ensures consistent code quality across teams.<br><br>
+
+      For full-stack developers
+      looking to optimize their workflow and build high-performing applications
+      from the ground up, Go presents an undeniable value proposition.<br>
+      It's not just about speed; it's about building <b>reliable, scalable, and efficient
+      systems</b> with a language that's a joy to work with. If you're ready to elevate
+      your full-stack projects, it's time to give <b>Go a serious look</b>.<br>
+    `,
   },
   {
     id: "tech-001",
@@ -101,80 +110,86 @@ your full-stack projects, it's time to give Go a serious look.<br>
 
     // Content with HTML tags instead of markdown
     content: `
-Is Your Code AI-Generated? Why That's the Wrong Question.<br>
+      <b>Is Your Code AI-Generated? Why That's the Wrong Question.</b><br>
 
-The evolution of the web developer role from manual coder to high-level system architect.
+      The evolution of the web developer role from manual coder to <b>high-level system architect</b>.<br><br>
 
-"Are you even a developer if you're not writing every line yourself?"<br>
+      "Are you even a developer if you're not writing every line yourself?"<br><br>
 
-That question? It's vibes from two generations ago. <br>
-Let's be honest, in this tech ecosystem—especially here in Lagos—we are moving too fast
-for that kind of gatekeeping. <br>
+      That question? It's vibes from two generations ago. <br>
+      Let's be honest, in this tech ecosystem—especially here in Lagos—we are moving too fast
+      for that kind of <b>gatekeeping</b>. <br><br>
 
-The simple truth is, if the biggest thing you worry about is who or what typed the semicolons,
-then o ga o! (meaning: "it's serious/wow!").<br>
+      The simple truth is, if the biggest thing you worry about is who or what typed the semicolons,
+      then <b>o ga o!</b> (meaning: "it's serious/wow!").<br><br>
 
-You're looking at the wrong part of the stack.<br>
+      You're looking at the wrong part of the stack.<br>
 
-From Coder to Architect: The Abstraction Sapa <br>
+        <hr><br>
 
-Twenty years ago, a developer was defined by their mastery of raw syntax.<br>
-Today, that definition has undergone a full system update. AI tools like Copilot,
-Claude, and Gemini are not replacing you; they are replacing the sapa (poverty/grind)
-of manually writing repetitive boilerplate.<br>
+      <b>From Coder to Architect: The Abstraction Sapa</b> <br>
 
-Think of it this way: Nobody calls a mechanical engineer less of an engineer
-because they use CAD software instead of a pencil and ruler.<br>
-The computer handles the tedious drawing; the engineer handles the design.<br>
+      Twenty years ago, a developer was defined by their mastery of raw syntax.<br>
+      Today, that definition has undergone a full system update. AI tools like Copilot,
+      Claude, and Gemini are not replacing you; they are replacing the <b>sapa</b> (poverty/grind)
+      of manually writing repetitive boilerplate.<br><br>
 
-AI is just our new, faster pencil.<br>
+      Think of it this way: Nobody calls a mechanical engineer less of an engineer
+      because they use CAD software instead of a pencil and ruler.<br>
+      The computer handles the tedious drawing; the engineer handles the <b>design</b>.<br><br>
 
-The New Developer Requirements: Vision over Typing
+      <b>AI is just our new, faster pencil.</b><br>
 
-The value of a web developer is no longer measured in lines of code written,
-but in the complexity of the problems solved.<br>
-The focus has shifted from low-level execution to high-level strategy.<br><br>
-Your new currency is critical thinking.
+        <hr><br>
 
-Here are the three roles that actually define a modern web developer:
+      <b>The New Developer Requirements: Vision over Typing</b><br>
 
-1. The System Architect
+      The value of a web developer is no longer measured in lines of code written,
+      but in the <b>complexity of the problems solved</b>.<br>
+      The focus has shifted from low-level execution to <b>high-level strategy</b>.<br><br>
+      Your new currency is <b>critical thinking</b>.<br><br>
 
-This is your big boy role. An AI can write a beautiful function,
-but it has zero clue how your Next.js frontend should securely talk to your PostgreSQL
-database, how your caching layer should be structured, or how to handle the logic flow.<br>
-The modern developer designs the entire system architecture—the blueprint.<br>
-AI is a worker bee; you are the Chief Architect.<br><br>
+      Here are the three roles that actually define a modern web developer:<br><br>
 
-2. The Prompt Engineer<br>
+      <b>1. The System Architect</b><br>
 
-Coding has become a conversational skill.<br>
-You must know the right questions to ask the AI to get clean, effective, and secure code.<br>
-If the AI output is slow, buggy, or full of vulnerabilities, it's not the AI's fault;
-it's the fault of the developer who failed to ask for and validate a clean solution.<br>
-This requires an even deeper understanding of the code than before.
+      This is your big boy role. An AI can write a beautiful function,
+      but it has zero clue how your Next.js frontend should securely talk to your PostgreSQL
+      database, how your caching layer should be structured, or how to handle the logic flow.<br>
+      The modern developer designs the entire system architecture—the blueprint.<br>
+      AI is a worker bee; <b>you are the Chief Architect</b>.<br><br>
 
-3. The Quality Assurance & Integrator
+      <b>2. The Prompt Engineer</b><br>
 
-When multiple AI-generated components meet your existing codebase and, baba God!,
-they start fighting, only a human developer can step in and reconcile the mess.<br>
-You are the final layer of quality control, security review,
-and integration sanity. You must possess the foundational knowledge to debug,
-refactor, and integrate code—regardless of its origin.<br><br>
+      Coding has become a conversational skill.<br>
+      You must know the <b>right questions to ask the AI</b> to get clean, effective, and secure code.<br>
+      If the AI output is slow, buggy, or full of vulnerabilities, it's not the AI's fault;
+      it's the fault of the developer who failed to ask for and validate a clean solution.<br>
+      This requires an even <b>deeper understanding of the code</b> than before.<br><br>
 
-Final Takeaway: Focus on the Vision<br>
+      <b>3. The Quality Assurance & Integrator</b><br>
 
-The question is not, "Is your code AI-generated?"<br>
+      When multiple AI-generated components meet your existing codebase and, <b>baba God!</b>,
+      they start fighting, only a human developer can step in and reconcile the mess.<br>
+      You are the <b>final layer of quality control</b>, security review,
+      and integration sanity. You must possess the foundational knowledge to debug,
+      refactor, and integrate code—regardless of its origin.<br><br>
 
-The right question is, "Did you solve the problem, and is the solution robust,
-scalable, and secure?"<br><br>
+        <hr><br>
 
-If you are using cutting-edge tools to deliver better value, faster, and
-focusing on the high-level design that brings the product to life, then my dear,
-you are not just a web developer—you are a tech visionary.<br><br>
+      <b>Final Takeaway: Focus on the Vision</b><br>
 
-Now, go and make that money! E go better! (meaning: "It will be better/things will be good!")
-`,
+      The question is not, "Is your code AI-generated?"<br><br>
+
+      The right question is, <b>"Did you solve the problem, and is the solution robust,
+      scalable, and secure?"</b><br><br>
+
+      If you are using cutting-edge tools to deliver better value, faster, and
+      focusing on the high-level design that brings the product to life, then my dear,
+      you are not just a web developer—you are a <b>tech visionary</b>.<br><br>
+
+      Now, go and make that money! <b>E go better!</b> (meaning: "It will be better/things will be good!")
+    `,
   },
   {
     id: "tech-003",
@@ -188,7 +203,14 @@ Now, go and make that money! E go better! (meaning: "It will be better/things wi
 
     // Post Metadata
     readTime: "3 min read",
-    tags: ["AI", "Architecture", "Future of Coding", "Web Performance", "MERN Stack", "Nextjs"],
+    tags: [
+      "AI",
+      "Architecture",
+      "Future of Coding",
+      "Web Performance",
+      "MERN Stack",
+      "Nextjs",
+    ],
     featuredImage: "/img/technical/keyboard.webp",
     isFeatured: true,
 
@@ -205,70 +227,77 @@ Now, go and make that money! E go better! (meaning: "It will be better/things wi
         github: "https://github.com/TheStackSquad/",
       },
     },
-    content: `In today's "Speed Economy," user patience is a myth. <br>
-    When your web application takes longer than one second to load, users feel friction.
-    When it takes longer than three seconds, they leave. For modern businesses,
-    web performance isn't just a technical metric; it is a direct function of conversion, retention, and revenue. <br>
+    content: `
+      In today's <b>"Speed Economy," user patience is a myth</b>. <br>
+      When your web application takes longer than <b>one second to load</b>, users feel friction.
+      When it takes longer than three seconds, they leave. For modern businesses,
+      web performance isn't just a technical metric; it is a direct function of <b>conversion, retention, and revenue</b>. <br><br>
 
-Here is why speed is non-negotiable for modern user experience (UX),
-and how modern architectural choices—like the Next.js framework—solve these critical problems. <br> <br>
+      Here is why speed is non-negotiable for modern user experience (UX),
+      and how modern architectural choices—like the <b>Next.js framework</b>—solve these critical problems. <br>
 
-The Business Case for Speed  <br>
+      <hr><br>
 
-A slow application doesn't just frustrate users; it actively harms your business goals:
+      <b>The Business Case for Speed 📊</b> <br>
 
-Lower Conversions: Studies show that a 100-millisecond delay can drop conversion rates by 7%.
-For e-commerce sites, speed directly correlates with transactions.  <br>
+      A slow application doesn't just frustrate users; it actively <b>harms your business goals</b>: <br><br>
 
-Higher Bounce Rate: Visitors who hit a slow page are much more likely to "bounce" (leave immediately)
-and seek a faster competitor. <br> <br>
+      <b>Lower Conversions:</b> Studies show that a 100-millisecond delay can drop conversion rates by 7%.
+      For e-commerce sites, speed directly correlates with transactions. <br><br>
 
-SEO Penalty: Search engines like Google actively penalize slow-loading sites. Faster performance is
-now a core ranking factor through Core Web Vitals (CWV), making performance essential for visibility. <br>
+      <b>Higher Bounce Rate:</b> Visitors who hit a slow page are much more likely to <b>"bounce" (leave immediately)</b>
+      and seek a faster competitor. <br><br>
 
-The Next.js Approach to Performance
+      <b>SEO Penalty:</b> Search engines like Google actively penalize slow-loading sites. Faster performance is
+      now a core ranking factor through <b>Core Web Vitals (CWV)</b>, making performance essential for visibility. <br>
 
-Next.js (built on React) is engineered specifically to address these performance challenges
-out-of-the-box by solving the root cause of slow loading: excessive client-side work. <br> <br>
+        <hr><br>
 
-1. Server-Side Rendering (SSR) & Static Generation (SSG)
+      <b>The Next.js Approach to Performance 🚀</b> <br>
 
-Traditional apps force the browser (the client) to load all JavaScript first before rendering any content.
-Next.js bypasses this by using your server to pre-render the content. <br>
+      Next.js (built on React) is engineered specifically to address these performance challenges
+      out-of-the-box by solving the root cause of slow loading: <b>excessive client-side work</b>. <br><br>
 
-Benefit: The client browser receives fully-formed HTML, displaying visible content instantly. <br>
-This massive improvement is tracked by the Largest Contentful Paint (LCP) metric.
+      <b>1. Server-Side Rendering (SSR) & Static Generation (SSG)</b> <br>
 
-2. Automatic Code Splitting <br> <br>
+      Traditional apps force the browser (the client) to load all JavaScript first before rendering any content.
+      Next.js bypasses this by using your server to <b>pre-render the content</b>. <br><br>
 
-Next.js automatically breaks down your application's JavaScript into small chunks.
+      <b>Benefit:</b> The client browser receives fully-formed HTML, displaying visible content <b>instantly</b>. <br>
+      This massive improvement is tracked by the Largest Contentful Paint (LCP) metric. <br><br>
 
-Benefit: When a user visits your homepage, they only download the code needed for that page.
-Code for the admin panel or checkout flow is only downloaded when they navigate to those specific areas.
-This minimizes the initial download size, improving the First Contentful Paint (FCP). <br> <br>
+      <b>2. Automatic Code Splitting</b> <br>
 
-3. Image Optimization
-Images are often the single biggest culprit for slow loads.
-Next.js uses its built-in Image Component (next/image) to optimize performance automatically.
-Benefit: Images are automatically resized, optimized, and served in modern formats (like WebP) and use
-native browser lazy loading, ensuring visuals load fast without developer intervention. <br> <br>
+      Next.js automatically breaks down your application's JavaScript into small chunks. <br><br>
 
-Universal Principles for Any Stack
+      <b>Benefit:</b> When a user visits your homepage, they only download the code needed for that page.
+      Code for the admin panel or checkout flow is only downloaded when they navigate to those specific areas.
+      This minimizes the initial download size, improving the First Contentful Paint (FCP). <br><br>
 
-While frameworks like Next.js offer performance solutions built-in,
-the core principles apply across any tech stack (Vue/Nuxt, Angular/Nest, PHP/Laravel, etc.):
+      <b>3. Image Optimization</b> <br>
+      Images are often the single biggest culprit for slow loads.
+      Next.js uses its built-in Image Component (next/image) to <b>optimize performance automatically</b>. <br>
+      <b>Benefit:</b> Images are automatically resized, optimized, and served in modern formats (like WebP) and use
+      native browser lazy loading, ensuring visuals load fast without developer intervention. <br>
 
-Prioritize Initial Load: The faster the user sees content, the better.
-Any stack must prioritize rendering the critical CSS and HTML immediately. <br>
+        <hr><br>
 
-Minimize JavaScript Payloads: Reduce the total amount of JavaScript loaded on the first request.
-Every stack requires developers to be judicious about library imports and package size. <br>
+      <b>Universal Principles for Any Stack</b> <br>
 
-Optimize Assets: Always compress images, cache static assets, and use modern CDNs to serve files from
-locations closer to the user. <br>
+      While frameworks like Next.js offer performance solutions built-in,
+      the core principles apply across any tech stack (Vue/Nuxt, Angular/Nest, PHP/Laravel, etc.): <br><br>
 
-A high-performing web application requires a modern stack and a developer who understands these fundamentals.
-My expertise ensures your application is not just functional, but commercially fast. <br>
-`,
+      <b>Prioritize Initial Load:</b> The faster the user sees content, the better.
+      Any stack must prioritize rendering the critical CSS and HTML immediately. <br><br>
+
+      <b>Minimize JavaScript Payloads:</b> Reduce the total amount of JavaScript loaded on the first request.
+      Every stack requires developers to be judicious about library imports and package size. <br><br>
+
+      <b>Optimize Assets:</b> Always compress images, cache static assets, and use modern CDNs to serve files from
+      locations closer to the user. <br><br>
+
+      A <b>high-performing web application</b> requires a modern stack and a developer who understands these fundamentals.
+      My expertise ensures your application is not just functional, but <b>commercially fast</b>. <br>
+    `,
   },
 ];

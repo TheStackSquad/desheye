@@ -3,12 +3,16 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { technicalBlogPosts } from "@/data/blogData/technical";
+import { designBlogPosts } from "@/data/blogData/design";
 import ShareButton from "@/components/common/buttons/shareButton";
 import ReadingProgressBar from "@/components/common/buttons/readingProgressBar";
 
+// Combine all posts into a single array for unified searching and generation
+const allBlogPosts = [...technicalBlogPosts, ...designBlogPosts];
+
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-  return technicalBlogPosts.map((post) => ({
+  return allBlogPosts.map((post) => ({
     slug: post.slug,
   }));
 }
@@ -16,7 +20,8 @@ export async function generateStaticParams() {
 // Generate metadata for each post
 export async function generateMetadata({ params }) {
   const { slug } = params;
-  const post = technicalBlogPosts.find((p) => p.slug === slug);
+  // Search the combined array
+  const post = allBlogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return {
@@ -26,8 +31,12 @@ export async function generateMetadata({ params }) {
       ),
     };
   }
+  // Use a default social media creator handle for robustness
+  const authorHandle =
+    post.author.twitter ||
+    `@${post.author.name.replace(" ", "").toLowerCase()}`;
 
-  return {
+ return {
     title: `${post.title} | Desheye Blog`,
     description: post.excerpt,
     metadataBase: new URL(
@@ -54,17 +63,19 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.excerpt,
       images: [post.featuredImage || "/img/UI.webp"],
-      creator: `@${post.author.name.replace(" ", "").toLowerCase()}`,
+      creator: authorHandle,
     },
-    authors: [{ name: post.author.name, url: "#" }],
+    authors: [{ name: post.author.name, url: post.author.linkedin || "#" }],
     category: post.category,
     keywords: post.tags.join(", "),
   };
 }
 
+
 export default async function BlogPostPage({ params }) {
   const { slug } = params;
-  const post = technicalBlogPosts.find((p) => p.slug === slug);
+  // Search the combined array for the post
+  const post = allBlogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
@@ -76,9 +87,9 @@ export default async function BlogPostPage({ params }) {
   const readTime = post.readTime || `${estimatedReadTime} min read`;
 
   // Get related posts
-  const relatedPosts = technicalBlogPosts
-    .filter((p) => p.slug !== post.slug && p.category === post.category)
-    .slice(0, 3);
+const relatedPosts = allBlogPosts
+  .filter((p) => p.slug !== post.slug && p.category === post.category)
+  .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gray-50">
