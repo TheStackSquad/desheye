@@ -4,6 +4,7 @@ import { technicalBlogPosts } from "./technical";
 // Combine all blog posts from different categories
 export const allBlogPosts = [
   ...technicalBlogPosts,
+  ...designBlogPosts,
   // Add other categories here later: ...businessBlogPosts, ...personalBlogPosts
 ];
 
