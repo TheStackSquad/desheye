@@ -96,4 +96,74 @@ export const designBlogPosts = [
       <b>Good friction is a feature, not a bug.</b> It’s the invisible security guard that lets your users feel safe enough to actually spend time—and money—with you. It’s time to advocate for the pause.
     `,
   },
+
+  {
+    id: "design-003",
+    slug: "the-digital-decay-of-unread-words",
+    date: "2025-10-31",
+    category: "Design",
+    title: "The Clock is Ticking: The Digital Decay of Unread Words",
+    excerpt: `" I'm guessing part of the logic is, "if you don't get your data in a month, then you probably don't need it, or just don't know how to retrieve it"`,
+
+    // Post Metadata
+    readTime: "5 min read",
+    tags: ["Messaging", "Storage", "Technical Writing", "Architecture"],
+    featuredImage: "/img/authors/sms.webp",
+    isFeatured: true,
+
+    // Author Metadata - UPDATED
+    author: {
+      id: "author-001",
+      name: "Aare Alaafia",
+      image: "/img/authors/aboutMe.webp",
+      bio: "its a machine world, whether we make them or just use.",
+      role: "tech enthusiast",
+      social: {
+        twitter: "@desheye",
+        linkedin: "https://linkedin.com/in/adesheye",
+        github: "https://github.com/TheStackSquad/",
+      },
+    },
+
+    content: `
+      <b> The 30-day window isn't just a number - </b>
+      it's the cold, hard deadline for your connection.<br>
+      Think of your unsent message as a <b>ghost waiting for a
+      body</b>.<br><br>
+      Every passing hour degrades its chance of resurrection.<br>
+      When that final day hits, the message isn't just quietly
+      archived—it's often violently purged. <br><br>
+      The server executes a "Time-to-Live" (TTL) protocol,
+      a digital expiration date written into the message itself.<br>
+      Once the TTL expires, the storage is instantly reclaimed,
+      and those profound, important, or even mundane words you
+      typed cease to exist.<br><br> They are not recoverable by anyone—not
+      the recipient, not the sender, and certainly not the company that once
+      held them.<br><br>
+<hr>
+<br>
+<b>The Moment of Truth:</b><br><br>
+A Failed Delivery is Permanent <br>
+In the world of online communication, there are no second
+chances after the retention period ends.<br>
+<b>Unlike a physical letter that can be returned to the sender,
+an expired chat message simply evaporates.</b><br><br>
+This brutal finality is crucial for the integrity of the communication system.<br><br>
+If servers held onto every undelivered message forever, they would instantly collapse under the weight of dormant data.<br><br>
+The retention limit is a necessary, self-imposed safety mechanism that forces digital decay.<br>
+So, the next time you see that single checkmark on an app message for an extended period, know that the message isn't patiently waiting; it's racing against an immutable, 30-day countdown to its own digital demise.<br><br>
+
+<hr>
+<br>
+
+<b>The Unseen Hand:</b> Asynchronous vs. Synchronous Fate<br><br>
+The stark difference between a 7-day SMS death sentence and a 30-day chat reprieve highlights
+a fundamental technical divide.<br><br>
+SMS is a largely synchronous protocol—it expects the recipient to be available now.<br><br>
+When they aren't, it quickly gives up.<br>Modern chat is asynchronous by design, meaning the sender and receiver don't need to be online at the same time.<br>
+The Message Broker acts as the ultimate guarantor, decoupling your timing from your friend's availability.<br><br>
+This superior design choice is what buys your message those extra weeks of life, transforming a quick, frantic text into a reliable, patient piece of communication, even if its ultimate fate is still extinction.
+
+    `,
+  },
 ];
