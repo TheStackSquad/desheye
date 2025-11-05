@@ -74,7 +74,7 @@ export const metadata = {
     siteName: "Stacc Sessions",
     images: [
       {
-        url: "/img/Desheye.png", // Correctly resolves to https://desheye.vercel.app/img/Desheye.png
+        url: "/img/Desheye.png",
         width: 1200,
         height: 630,
         alt: "Desheye's Stacc Sessions Portfolio",
