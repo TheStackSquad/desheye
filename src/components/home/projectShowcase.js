@@ -177,35 +177,6 @@ export default function ProjectsShowcase() {
           <ProjectCard key={project.title} project={project} index={index} />
         ))}
       </motion.div>
-
-      {/* Enhanced "See All" CTA */}
-      <motion.div
-        variants={textStaggerVariants}
-        className="mt-auto pt-8 flex justify-center"
-      >
-        <Link href="/work">
-          <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all flex items-center gap-3 group"
-          >
-            <span className="relative z-10">See All Work</span>
-            <motion.div
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <ArrowRight className="w-5 h-5 relative z-10" />
-            </motion.div>
-
-            {/* Shine effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              animate={{ x: ["-100%", "200%"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            />
-          </motion.button>
-        </Link>
-      </motion.div>
     </motion.div>
   );
 }
