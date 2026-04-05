@@ -174,7 +174,7 @@ export default function Header() {
             {/* Mobile: icon download + hamburger */}
             <div className="flex items-center gap-3 lg:hidden">
               <Link
-                href="/img/Resume.pdf"
+                href="/img/ResumeDesheye.pdf"
                 download="Resume-Adesheye-Adeshina.pdf"
               >
                 <motion.button
