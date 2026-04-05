@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #EEEAF4;
+  --foreground: #0D0F1A;
+  --font-cinzel: "Cinzel Decorative", "Cinzel", serif;
+  --font-prata: "Prata", serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-outfit: "Outfit", sans-serif;
+  --font-abril: "Abril Fatface", serif;
+  --accent-orange: #FF4D00;
+  --accent-violet: #7B5CF0;
+  --navy: #0D0F1A;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-prata);
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: var(--font-cinzel);
+}
+
+p, span {
+  font-family: var(--font-prata);
+}
+
+/* Blog */
+.blog-title  { font-family: var(--font-playfair), serif; font-weight: 700; }
+.blog-body   { font-family: var(--font-outfit), sans-serif; font-weight: 400; }
+.blog-accent { font-family: var(--font-abril), serif; }
+
+/* Utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Selection color */
+::selection {
+  background: var(--accent-violet);
+  color: white;
+}
