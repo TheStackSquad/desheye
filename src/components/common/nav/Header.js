@@ -1,153 +1,206 @@
-// src/components/common/Header.
+// src/components/common/Header.js
 
 "use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Menu, X, Download, ArrowDown } from "lucide-react";
-// Import the new sub-components and navigation data
-import DesktopNav from "@/components/common/nav/desktopNav";
-import MobileMenu from "@/components/common/nav/mobileMenu";
+import { Menu, X, Download } from "lucide-react";
 import { navigationLinks } from "@/data/navigationData";
 
+// ── Desktop Nav ───────────────────────────────────────────────────────────────
+function DesktopNav({ navItems }) {
+  return (
+    <nav className="hidden lg:flex items-center gap-1">
+      {navItems.map((item) => (
+        <Link
+          key={item.id}
+          href={item.href}
+          className="relative px-4 py-2 text-sm font-medium tracking-wide
+            text-white/60 hover:text-white transition-colors duration-200
+            font-cinzel uppercase text-xs"
+        >
+          {item.label}
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
+// ── Mobile Menu ───────────────────────────────────────────────────────────────
+function MobileMenu({ open, setOpen, navItems }) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className="lg:hidden fixed top-16 left-0 w-full z-40
+            bg-[#0D0F1A]/98 backdrop-blur-md border-b border-white/10"
+        >
+          <div className="px-6 py-4 flex flex-col gap-1">
+            {navItems.map((item, i) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.06 }}
+              >
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block px-4 py-3 rounded-xl text-sm font-cinzel
+                    uppercase tracking-widest text-white/60 hover:text-white
+                    hover:bg-white/5 transition-all duration-200"
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
+            ))}
+
+            <div className="h-px bg-white/10 my-3" />
+
+            <Link
+              href="/img/Resume.pdf"
+              download="Resume-Adesheye-Adeshina.pdf"
+            >
+              <motion.button
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                whileTap={{ scale: 0.97 }}
+                className="w-full flex items-center justify-center gap-3
+                  bg-gradient-to-r from-[#FF4D00] to-[#7B5CF0]
+                  text-white font-semibold py-4 rounded-2xl
+                  font-cinzel text-sm tracking-wide"
+              >
+                <Download size={16} />
+                Download Resume
+              </motion.button>
+            </Link>
+            <p className="text-center text-white/30 text-xs mt-2 mb-2">
+              Latest resume · PDF format
+            </p>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   const menuRef = useRef(null);
-  const menuButtonRef = useRef(null);
+  const btnRef = useRef(null);
 
-  // Add scroll effect for enhanced visual appeal
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handler = (e) => {
       if (
         menuOpen &&
         menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        menuButtonRef.current &&
-        !menuButtonRef.current.contains(event.target)
-      ) {
+        !menuRef.current.contains(e.target) &&
+        btnRef.current &&
+        !btnRef.current.contains(e.target)
+      )
         setMenuOpen(false);
-      }
     };
-
-    if (menuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    if (menuOpen) document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
   }, [menuOpen]);
-
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  // Note: The handleDownload function has been removed as the 'download' attribute handles this directly on the link.
 
   return (
     <>
       <motion.header
+        initial={{ y: -80 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className={`w-full sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#181D30]/95 backdrop-blur-md shadow-lg border-b border-white/10"
-            : "bg-[#181D30]"
-        } text-white`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+            ? "bg-[#0D0F1A]/95 backdrop-blur-md shadow-xl border-b border-white/8"
+            : "bg-[#0D0F1A]"
+        }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Enhanced Logo */}
-            <Link href="/" className="group flex-shrink-0 z-10">
-              <motion.div
-                className="relative"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+        <div className="max-w-7xl mx-auto px-5 sm:px-8">
+          <div className="flex items-center justify-between h-16 md:h-18">
+            {/* Logo */}
+            <Link href="/" className="flex-shrink-0 group">
+              <motion.span
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="text-xl font-bold text-white font-cinzel tracking-tight
+                  group-hover:text-transparent group-hover:bg-gradient-to-r
+                  group-hover:from-[#FF4D00] group-hover:to-[#7B5CF0]
+                  group-hover:bg-clip-text transition-all duration-300"
               >
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
-                <div className="relative text-xl md:text-2xl font-display font-bold text-white transition-all duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text">
-                  Stacc Sessions
-                </div>
-              </motion.div>
+                Stacc<span className="text-[#FF4D00]">.</span>Sessions
+              </motion.span>
             </Link>
 
-            {/* Desktop Nav and Button */}
-            <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+            {/* Desktop: Nav centred + CTA right */}
+            <div className="hidden lg:flex items-center flex-1 justify-center">
               <DesktopNav navItems={navigationLinks} />
+            </div>
 
-              {/* Enhanced Desktop Download Button */}
-              {/* Using a link tag with a download attribute for direct file download */}
+            <div className="hidden lg:block">
               <Link
                 href="/img/Resume.pdf"
                 download="Resume-Adesheye-Adeshina.pdf"
               >
                 <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="relative group bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  whileHover={{ scale: 1.04, y: -1 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full
+                    bg-gradient-to-r from-[#FF4D00] to-[#7B5CF0]
+                    text-white text-sm font-semibold font-cinzel tracking-wide
+                    shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40
+                    transition-shadow duration-300"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative flex items-center space-x-2">
-                    <Download size={18} />
-                    <span>Download Resume</span>
-                  </div>
+                  <Download size={15} />
+                  Download Resume
                 </motion.button>
               </Link>
             </div>
 
-            {/* Mobile Right Side - Download + Menu */}
-            <div className="flex items-center space-x-3 lg:hidden">
-              {/* Mobile Download Button - Compact Icon Version */}
-              {/* Using a link tag with a download attribute for direct file download */}
+            {/* Mobile: icon download + hamburger */}
+            <div className="flex items-center gap-3 lg:hidden">
               <Link
                 href="/img/Resume.pdf"
                 download="Resume-Adesheye-Adeshina.pdf"
               >
                 <motion.button
-                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="relative group bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
-                  title="Download Resume"
+                  className="p-2.5 rounded-full bg-gradient-to-r from-[#FF4D00] to-[#7B5CF0]
+                    text-white shadow-md"
                 >
-                  <Download size={18} className="text-white" />
-                  <motion.div
-                    className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
+                  <Download size={17} />
                 </motion.button>
               </Link>
 
-              {/* Mobile Menu Button */}
               <motion.button
-                ref={menuButtonRef}
-                onClick={handleMenuToggle}
-                aria-label="Toggle Menu"
+                ref={btnRef}
+                onClick={() => setMenuOpen(!menuOpen)}
                 whileTap={{ scale: 0.9 }}
-                className={`relative p-3 rounded-full transition-all duration-300 ${
+                className={`p-2.5 rounded-full transition-all duration-200 ${
                   menuOpen
                     ? "bg-red-500/20 text-red-400"
-                    : "bg-white/10 text-white hover:bg-white/20"
+                    : "bg-white/8 text-white hover:bg-white/15"
                 }`}
               >
                 <motion.div
                   animate={{ rotate: menuOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.25 }}
                 >
-                  {menuOpen ? <X size={20} /> : <Menu size={20} />}
+                  {menuOpen ? <X size={19} /> : <Menu size={19} />}
                 </motion.div>
               </motion.button>
             </div>
@@ -155,13 +208,11 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu Panel */}
       <div ref={menuRef}>
         <MobileMenu
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
+          open={menuOpen}
+          setOpen={setMenuOpen}
           navItems={navigationLinks}
-          // The download handler is no longer needed here since the link is a direct download.
         />
       </div>
     </>

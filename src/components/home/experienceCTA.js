@@ -5,66 +5,100 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Zap } from "lucide-react";
-import { uiData } from "@/data/dataUI"; 
+import { uiData } from "@/data/dataUI";
 import { textStaggerVariants, containerStagger } from "@/animation/homeAnimate";
 
-// Component to represent a single skill in the grid
 const SkillCard = ({ name, icon }) => (
   <motion.div
     variants={textStaggerVariants}
-    whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.08)" }}
-    whileTap={{ scale: 0.98 }}
-    className="flex flex-col items-center justify-center p-3 sm:p-4 border
-    border-gray-100 rounded-xl bg-white transition-all duration-300 cursor-pointer text-center"
+    whileHover={{ scale: 1.06, y: -2 }}
+    whileTap={{ scale: 0.97 }}
+    className="flex flex-col items-center justify-center p-3 sm:p-4
+      rounded-2xl bg-white border border-gray-100
+      hover:border-[#7B5CF0]/30 hover:shadow-lg hover:shadow-violet-100
+      transition-all duration-300 cursor-pointer text-center group"
   >
-    {/* Icon is pre-sized in uiData, so we just render it */}
-    <div className="mb-2">{icon}</div> 
-    <p className="text-xs font-semibold text-gray-700 mt-1">{name}</p>
+    <div className="mb-2 opacity-90 group-hover:opacity-100 transition-opacity">
+      {icon}
+    </div>
+    <p
+      className="text-[11px] font-semibold text-gray-600 group-hover:text-[#7B5CF0]
+      font-cinzel tracking-wide transition-colors duration-200"
+    >
+      {name}
+    </p>
   </motion.div>
 );
 
 export default function SkillCta() {
-  const skillsToShow = uiData.about.skills.slice(0, 16); 
+  const skillsToShow = uiData.about.skills.slice(0, 12);
 
   return (
     <motion.div
       variants={containerStagger}
-      className="relative flex flex-col h-[650px] lg:h-[630px] bg-gray-50 bg-gray-300 rounded-[2rem] p-6  py-9 mb-5 md:p-8 overflow-hidden"
+      className="relative flex flex-col bg-[#F5F3FF] rounded-[2rem]
+        p-6 py-8 md:p-8 mb-5 overflow-hidden"
+      style={{ minHeight: "580px" }}
     >
-      {/* Title/Header */}
-      <div className="mb-8 flex items-center gap-3">
-        <Zap className="w-6 h-6 text-indigo-600" />
-        <h2 className="text-2xl font-bold text-gray-900">Core Tech Stack</h2>
-      </div>
-
-
+      {/* Subtle violet glow top-right */}
       <div
-        className="grid grid-cols-3 sm:grid-cols-4 gap-3 md:gap-4 flex-grow"
-      >
-        {skillsToShow.map((skill, index) => (
-          // Add a check to ensure we don't go over 16 items for the 4x4 constraint
-          // The index check is optional since we slice the data, but good for safety
-          <SkillCard key={index} name={skill.name} icon={skill.icon} />
+        className="pointer-events-none absolute -top-20 -right-16 w-64 h-64
+        rounded-full bg-[#7B5CF0]/10 blur-[60px]"
+      />
+
+      {/* Header */}
+      <div className="relative z-10 mb-7 flex items-center gap-3">
+        <div
+          className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#7B5CF0] to-[#FF4D00]
+          flex items-center justify-center flex-shrink-0"
+        >
+          <Zap className="w-4 h-4 text-white" />
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-gray-900 font-cinzel tracking-tight">
+            Core Tech Stack
+          </h2>
+          <p className="text-xs text-gray-400 mt-0.5">
+            Tools I build with daily
+          </p>
+        </div>
+      </div>
+
+      {/* Skills grid – 3 cols mobile, 4 cols sm+ */}
+      <div className="relative z-10 grid grid-cols-3 sm:grid-cols-4 gap-3 flex-1">
+        {skillsToShow.map((skill, i) => (
+          <SkillCard key={i} name={skill.name} icon={skill.icon} />
         ))}
-        {/* Fill remaining slots with a placeholder if fewer than 16 */}
-        {Array.from({ length: 16 - skillsToShow.length }).map((_, index) => (
-            <div key={`placeholder-${index}`} className="hidden sm:block p-3 sm:p-4 rounded-xl bg-gray-100/50"></div>
+        {Array.from({ length: 12 - skillsToShow.length }).map((_, i) => (
+          <div
+            key={`ph-${i}`}
+            className="hidden sm:block rounded-2xl bg-white/50"
+          />
         ))}
       </div>
 
-      {/* --- */}
-
-      {/* CTA Button at the bottom */}
-      <div className="mt-8 mb-5 h-[150px] flex justify-center">
+      {/* CTA */}
+      <div className="relative z-10 mt-8 flex justify-center">
         <Link href="/skills">
           <motion.button
             variants={textStaggerVariants}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/30"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="group relative overflow-hidden bg-[#0D0F1A] text-white
+              px-8 py-4 rounded-full font-cinzel text-sm font-semibold
+              tracking-wide flex items-center gap-2.5 shadow-xl
+              shadow-gray-900/20 transition-shadow duration-300
+              hover:shadow-gray-900/40"
           >
-            See More Skills
-            <ArrowRight className="w-4 h-4" />
+            <span
+              className="absolute inset-0 bg-gradient-to-r from-[#FF4D00] to-[#7B5CF0]
+              opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+            />
+            <span className="relative z-10">See More Skills</span>
+            <ArrowRight
+              className="w-4 h-4 relative z-10 group-hover:translate-x-0.5
+              transition-transform duration-200"
+            />
           </motion.button>
         </Link>
       </div>

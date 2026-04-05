@@ -1,75 +1,31 @@
-// src/animations/homeAnimate.js
+// src/animations/homeAnimate.
 
 // src/animation/homeAnimate.js
+// Drop-in replacement — same export names, tuned timing
 
 export const gridVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
+    transition: { duration: 0.4, staggerChildren: 0.12 },
   },
 };
 
 export const leftGridVariants = {
-  hidden: {
-    x: -100,
-    opacity: 0,
-  },
+  hidden: { opacity: 0, x: -28 },
   visible: {
-    x: 0,
     opacity: 1,
-    transition: {
-      type: "spring",
-      damping: 20,
-      stiffness: 100,
-      duration: 0.6,
-    },
+    x: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 export const rightGridVariants = {
-  hidden: {
-    x: 100,
-    opacity: 0,
-  },
+  hidden: { opacity: 0, x: 28 },
   visible: {
+    opacity: 1,
     x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      damping: 20,
-      stiffness: 100,
-      duration: 0.6,
-    },
-  },
-};
-
-export const textStaggerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 100,
-    },
-  },
-};
-
-export const cardStaggerVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 100,
-    },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -77,9 +33,24 @@ export const containerStagger = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
-    },
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+  },
+};
+
+export const textStaggerVariants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export const cardStaggerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
   },
 };

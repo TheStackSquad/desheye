@@ -5,186 +5,221 @@ import { useState, useMemo } from "react";
 import BlogGrid from "@/components/blog/blogGrid";
 import { technicalBlogPosts } from "@/data/blogData/technical";
 import { designBlogPosts } from "@/data/blogData/design";
+import { motion } from "framer-motion";
+import { Search, X } from "lucide-react";
 
-const BlogUI = () => {
+const allBlogPosts = [...technicalBlogPosts, ...designBlogPosts].sort(
+  (a, b) => new Date(b.date) - new Date(a.date),
+);
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
+};
+
+export default function BlogUI() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Combine and sort posts by date (newest first)
-  const allBlogPosts = useMemo(() => {
-    return [...technicalBlogPosts, ...designBlogPosts].sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
-    );
+  const categories = useMemo(() => {
+    const cats = new Set(allBlogPosts.map((p) => p.category));
+    return ["all", ...Array.from(cats)];
   }, []);
 
-  // Get unique categories
-  const categories = useMemo(() => {
-    const cats = new Set(allBlogPosts.map((post) => post.category));
-    return ["all", ...Array.from(cats)];
-  }, [allBlogPosts]);
-
-  // Filter posts based on category and search
   const filteredPosts = useMemo(() => {
     return allBlogPosts.filter((post) => {
-      const matchesCategory =
+      const matchCat =
         selectedCategory === "all" || post.category === selectedCategory;
-      const matchesSearch =
-        searchQuery === "" ||
-        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.tags.some((tag) =>
-          tag.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-      return matchesCategory && matchesSearch;
+      const q = searchQuery.toLowerCase();
+      const matchSearch =
+        !q ||
+        post.title.toLowerCase().includes(q) ||
+        post.excerpt.toLowerCase().includes(q) ||
+        post.tags.some((t) => t.toLowerCase().includes(q));
+      return matchCat && matchSearch;
     });
-  }, [allBlogPosts, selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        {/* Page Header */}
-        <header className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 bg-blue-50 rounded-full">
-            <span className="text-blue-600 text-sm font-outfit font-semibold uppercase tracking-wider">
-              Blog & Insights
-            </span>
-          </div>
+    // ✅ Deep off-white background
+    <div className="min-h-screen bg-[#F5F0EB] text-black">
+      {/* ── HERO HEADER ─────────────────────────────────────── */}
+      <header className="relative overflow-hidden border-b border-black/10">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-[#F5F0EB] blur-[100px]" />
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#FF4D00]/10 blur-[80px]" />
+        </div>
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.8) 1px,transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
 
-          <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-            Tech Insights & Stories
-          </h1>
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-16 pb-14 sm:pt-20 sm:pb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {/* ✅ Small label — black */}
+            <p
+              className="text-xs font-cinzel tracking-widest uppercase
+              text-black mb-4 flex items-center gap-2"
+            >
+              <span className="inline-block w-6 h-px bg-black" />
+              Blog &amp; Insights
+            </p>
 
-          <p className="font-outfit text-gray-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-            Exploring the future of web development, AI integration, and the
-            evolving role of developers in the modern tech ecosystem.
-          </p>
-        </header>
+            {/* ✅ XXL heading — bright red */}
+            <h1
+              className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold
+              text-[#E8000D] leading-[1.05] tracking-tight mb-5"
+            >
+              Tech Insights
+              <br />
+              <span className="text-[#7B5CF0] italic">&#38; Stories</span>
+            </h1>
 
-        {/* Filters & Search Section */}
-        <div className="mb-10 sm:mb-12 space-y-6">
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto">
-            <div className="relative">
-              <svg
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
+            {/* ✅ Body text — black */}
+            <p className="text-black text-base sm:text-lg max-w-xl leading-relaxed font-outfit">
+              Exploring web development, AI integration, and the evolving role
+              of engineers in the modern tech ecosystem.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="flex items-center gap-8 mt-10 pt-8 border-t border-black/10"
+          >
+            {/* ✅ Stat numbers and labels — black */}
+            <div>
+              <p className="text-2xl font-bold text-black font-cinzel">
+                {allBlogPosts.length}
+              </p>
+              <p className="text-xs text-black/60 mt-0.5 uppercase tracking-wider font-outfit">
+                Articles
+              </p>
+            </div>
+            <div className="w-px h-8 bg-black/15" />
+            <div>
+              <p className="text-2xl font-bold text-black font-cinzel">
+                {categories.length - 1}
+              </p>
+              <p className="text-xs text-black/60 mt-0.5 uppercase tracking-wider font-outfit">
+                Categories
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </header>
+
+      {/* ── FILTERS BAR ─────────────────────────────────────── */}
+      <div className="sticky top-16 z-30 bg-[#F5F0EB] backdrop-blur-md border-b-2 border-black/20">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-4">
+          <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+            {/* Search */}
+            <div className="relative flex-1 max-w-sm">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-black/40 pointer-events-none" />
               <input
                 type="search"
-                placeholder="Search articles, topics, or tags..."
+                placeholder="Search articles or tags…"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 font-outfit text-gray-900 placeholder-gray-400 bg-white shadow-sm"
                 aria-label="Search blog posts"
+                className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-white border-2
+            border-black/20 text-black text-sm placeholder-black/35 font-outfit
+            focus:outline-none focus:border-[#7B5CF0] focus:bg-white
+            transition-all duration-200"
               />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-black/40 hover:text-black transition-colors"
+                  aria-label="Clear search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
-          </div>
 
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-outfit font-medium text-sm sm:text-base capitalize transition-all duration-200 ${
-                  selectedCategory === category
-                    ? "bg-gray-900 text-white shadow-lg shadow-gray-900/20 scale-105"
-                    : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
-                }`}
-                aria-pressed={selectedCategory === category}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+            {/* Category pills */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-0.5 flex-nowrap">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  aria-pressed={selectedCategory === cat}
+                  className={`flex-shrink-0 px-4 py-2 rounded-full text-xs font-cinzel
+              font-semibold tracking-wider uppercase transition-all duration-200 border-2
+              ${
+                selectedCategory === cat
+                  ? "bg-[#7B5CF0] text-white border-[#7B5CF0] shadow-lg shadow-violet-500/30"
+                  : "bg-white text-black/60 border-black/20 hover:border-black/50 hover:text-black"
+              }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
 
-          {/* Results Count */}
-          <div className="text-center">
-            <p className="font-outfit text-gray-500 text-sm">
-              Showing{" "}
-              <span className="font-semibold text-gray-900">
+            {/* Count */}
+            <p className="text-xs text-black/50 font-outfit whitespace-nowrap flex-shrink-0">
+              <span className="text-black font-semibold">
                 {filteredPosts.length}
               </span>{" "}
               {filteredPosts.length === 1 ? "article" : "articles"}
-              {searchQuery && ` for "${searchQuery}"`}
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Blog Grid */}
-        <BlogGrid posts={filteredPosts} />
-
-        {/* Empty State */}
-        {filteredPosts.length === 0 && (
-          <div className="text-center py-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-              <svg
-                className="w-8 h-8 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+      {/* ── GRID ────────────────────────────────────────────── */}
+      <main className="max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+        {filteredPosts.length > 0 ? (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <BlogGrid posts={filteredPosts} />
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center py-24"
+          >
+            <div
+              className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10
+              flex items-center justify-center mx-auto mb-6"
+            >
+              <Search className="w-7 h-7 text-gray-600" />
             </div>
-            <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="font-playfair text-2xl font-bold text-black mb-2">
               No articles found
             </h3>
-            <p className="font-outfit text-gray-600 mb-6">
-              Try adjusting your search or filter to find what you&apos;re looking
-              for.
+            <p className="text-black/60 font-outfit text-sm mb-8">
+              Try adjusting your search or filter.
             </p>
             <button
               onClick={() => {
                 setSearchQuery("");
                 setSelectedCategory("all");
               }}
-              className="inline-flex items-center font-outfit bg-gray-900 text-white px-6 py-2.5 rounded-lg hover:bg-gray-800 transition-colors duration-200"
+              className="px-6 py-2.5 rounded-full bg-[#7B5CF0] text-white text-sm
+                font-cinzel font-semibold tracking-wide hover:bg-[#6d4fe0]
+                transition-colors duration-200"
             >
               Clear filters
             </button>
-          </div>
+          </motion.div>
         )}
-
-        {/* Load More Button (for future pagination) */}
-        {filteredPosts.length > 0 && (
-          <div className="text-center mt-12 sm:mt-16">
-            <button className="inline-flex items-center gap-2 font-outfit bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3.5 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg">
-              <span>Load More Articles</span>
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-          </div>
-        )}
-      </div>
+      </main>
     </div>
   );
-};
-
-export default BlogUI;
+}

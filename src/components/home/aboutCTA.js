@@ -1,5 +1,7 @@
 // src/components/home/aboutCta.js
+
 "use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Code2 } from "lucide-react";
@@ -10,133 +12,121 @@ export default function AboutCta() {
     <motion.div
       variants={containerStagger}
       className="relative flex flex-col justify-between min-h-[450px]
-      sm:min-h-[500px] lg:min-h-[550px] bg-gradient-to-br from-amber-700
-      via-orange-600 to-rose-600 rounded-[2rem] p-6 sm:p-8 md:p-7 lg:p-3 overflow-hidden"
+        sm:min-h-[500px] lg:min-h-[550px] rounded-[2rem] p-6 sm:p-8 md:p-7 lg:p-8
+        overflow-hidden bg-[#0D0F1A]"
     >
-      {/* Enhanced gradient overlay for better contrast */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+      {/* ── Ambient glow blobs ─────────────────────────────── */}
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute -top-24 -right-20 w-80 h-80 rounded-full
+          bg-[#7B5CF0]/20 blur-[80px]"
+        />
+        <div
+          className="absolute -bottom-16 -left-12 w-64 h-64 rounded-full
+          bg-[#FF4D00]/15 blur-[70px]"
+        />
+      </div>
 
-      {/* TOP SECTION */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full z-10 gap-6 sm:gap-4 md:gap-6">
-        {/* CTA Button */}
+      {/* ── Subtle grid texture ───────────────────────────── */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      {/* ── TOP SECTION ──────────────────────────────────── */}
+      <div
+        className="relative z-10 flex flex-col sm:flex-row justify-between
+        items-start sm:items-center w-full gap-6 sm:gap-4"
+      >
+        {/* CTA button */}
         <Link href="/about" className="w-full sm:w-auto">
           <motion.button
             variants={textStaggerVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative overflow-hidden bg-white text-gray-900 px-8 py-4 sm:px-6 sm:py-3 md:px-8 md:py-3.5 rounded-full font-medium flex items-center justify-center gap-2 transition-all duration-300 w-full sm:w-auto sm:min-w-[160px] shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="group relative overflow-hidden bg-white/8 border border-white/15
+              text-white px-8 py-3.5 rounded-full font-cinzel text-sm font-semibold
+              tracking-wide flex items-center justify-center gap-2
+              w-full sm:w-auto hover:border-white/30 transition-colors duration-300"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 translate-y-full group-hover:translate-y-0 group-focus:translate-y-0 transition-transform duration-300 ease-out" />
-            <span className="relative z-10 group-hover:text-white group-focus:text-white transition-colors duration-300 text-base sm:text-sm md:text-base font-semibold">
-              Learn More
-            </span>
-            <ArrowRight className="w-5 h-5 sm:w-4 sm:h-4 md:w-5 md:h-5 relative z-10 group-hover:text-white group-focus:text-white transition-colors duration-300" />
+            <span
+              className="absolute inset-0 bg-gradient-to-r from-[#FF4D00]/20 to-[#7B5CF0]/20
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
+            <span className="relative z-10">Learn More</span>
+            <ArrowRight
+              className="w-4 h-4 relative z-10 group-hover:translate-x-0.5
+              transition-transform duration-200"
+            />
           </motion.button>
         </Link>
 
-        {/* Role & Stack - Desktop & Mobile Responsive */}
+        {/* Role / stack info */}
         <motion.div variants={textStaggerVariants} className="w-full sm:w-auto">
-          {/* Desktop Layout (md and up) */}
-          <div className="hidden md:block text-right space-y-4">
-            <div className="space-y-0.5">
-              <motion.p
-                variants={textStaggerVariants}
-                className="text-white text-sm lg:text-base font-semibold"
-              >
+          {/* Desktop */}
+          <div className="hidden md:block text-right space-y-3">
+            <div>
+              <p className="text-white text-sm font-semibold font-cinzel tracking-wide">
                 Lead Dev for
-              </motion.p>
-              <motion.p
-                variants={textStaggerVariants}
-                className="text-white text-sm lg:text-base font-semibold"
-              >
+              </p>
+              <p className="text-white text-sm font-semibold font-cinzel tracking-wide">
                 Stacc Sessions
-              </motion.p>
+              </p>
             </div>
-            <div className="space-y-0.5">
-              <motion.p
-                variants={textStaggerVariants}
-                className="text-white/90 text-xs lg:text-sm font-medium"
-              >
+            <div>
+              <p className="text-white/50 text-xs font-medium">
                 Full Stack Developer
-              </motion.p>
-              <motion.p
-                variants={textStaggerVariants}
-                className="text-white/90 text-xs lg:text-sm font-medium"
-              >
-                MERN & Golang
-              </motion.p>
+              </p>
+              <p className="text-white/50 text-xs font-medium">
+                MERN &amp; Golang
+              </p>
             </div>
-            <motion.div variants={textStaggerVariants} className="pt-1">
-              <motion.p
-                variants={textStaggerVariants}
-                className="text-white/80 text-xs lg:text-sm font-medium"
-              >
-                Lagos, Nigeria 🇳🇬
-              </motion.p>
-            </motion.div>
+            <p className="text-white/35 text-xs tracking-wider">
+              Lagos, Nigeria 🇳🇬
+            </p>
           </div>
 
-          {/* Mobile & Tablet Layout (below md) */}
-          <div className="md:hidden space-y-3">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
-              <div className="space-y-1">
-                <motion.p
-                  variants={textStaggerVariants}
-                  className="text-white text-base sm:text-sm font-semibold"
-                >
-                  Lead Dev for Stacc Sessions
-                </motion.p>
-                <motion.p
-                  variants={textStaggerVariants}
-                  className="text-white/90 text-sm font-medium"
-                >
-                  Full Stack Dev • MERN & Golang
-                </motion.p>
-              </div>
-              <motion.div
-                variants={textStaggerVariants}
-                className="sm:text-right"
-              >
-                <motion.p
-                  variants={textStaggerVariants}
-                  className="text-white/80 text-sm font-medium"
-                >
-                  Lagos, Nigeria 🇳🇬
-                </motion.p>
-              </motion.div>
-            </div>
+          {/* Mobile */}
+          <div className="md:hidden space-y-1">
+            <p className="text-white text-sm font-semibold font-cinzel">
+              Lead Dev · Stacc Sessions
+            </p>
+            <p className="text-white/50 text-sm">
+              Full Stack Dev · MERN &amp; Golang
+            </p>
+            <p className="text-white/35 text-xs">Lagos, Nigeria 🇳🇬</p>
           </div>
         </motion.div>
       </div>
 
-      {/* BOTTOM SECTION */}
+      {/* ── BOTTOM SECTION ───────────────────────────────── */}
       <div
-        className="flex flex-col sm:flex-row justify-content: space-between items-start sm:items-end w-full z-10
-      gap-3 sm:gap-2 md:gap-2 W-full"
+        className="relative z-10 flex flex-col sm:flex-row justify-between
+        items-start sm:items-end w-full gap-3"
       >
-        {/* Name & Icon */}
         <motion.div
           variants={textStaggerVariants}
-          className="flex items-center gap-2 sm:gap-5 md:gap-2 lg:gap-4"
+          className="flex items-center gap-3"
         >
-          <motion.div variants={textStaggerVariants} className="flex-shrink-0">
-            <Code2 className="w-10 h-10 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white drop-shadow-lg" />
-          </motion.div>
-          <motion.h2
-            variants={textStaggerVariants}
-            className="text-6xl sm:text-5xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight"
+          <Code2 className="w-10 h-10 lg:w-12 lg:h-12 text-[#FF4D00] flex-shrink-0" />
+          <h2
+            className="font-cinzel text-6xl sm:text-5xl lg:text-7xl xl:text-8xl
+            font-bold text-white leading-none tracking-tight"
           >
             Desheye
-          </motion.h2>
+          </h2>
         </motion.div>
 
-        {/* Optional: Add a decorative element on desktop */}
         <motion.div
           variants={textStaggerVariants}
-          className="hidden lg:flex items-end gap-2 text-white/40"
+          className="hidden lg:flex items-end gap-3"
         >
-          <div className="w-16 h-px bg-white/40"></div>
-          <span className="text-xs font-medium tracking-wider uppercase">
+          <div className="w-14 h-px bg-gradient-to-r from-[#FF4D00] to-[#7B5CF0]" />
+          <span className="text-white/30 text-xs font-cinzel tracking-widest uppercase">
             Portfolio
           </span>
         </motion.div>

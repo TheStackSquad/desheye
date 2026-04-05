@@ -1,16 +1,17 @@
 //src/app/experience/page.js
 
-"use client";
-
-import React from "react";
 import ExperienceUI from "@/components/experience/experienceUI";
 
-const ExperiencePage = () => {
-  return (
-    <div className="bg-gray-350 py-5 mb-7 text-black min-h-screen">
-    <ExperienceUI/>
-    </div>
-  );
+export const metadata = {
+  title: "Experience | Desheye — Senior Full Stack Engineer",
+  description:
+    "Career history of Adesheye — Senior Full Stack Engineer specialising in MERN, NoSQL, Go, and scalable architecture.",
 };
 
-export default ExperiencePage;
+export default function ExperiencePage() {
+  return (
+    <div className="bg-[#EEEAF4] min-h-screen">
+      <ExperienceUI />
+    </div>
+  );
+}
